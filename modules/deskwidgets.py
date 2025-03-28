@@ -445,7 +445,8 @@ def create_widgets(config, widget_type):
                 DateTime(formatters=["%A, %d %B"], interval=10000, name="date")
             )
         if config.get("desktopwidgets", {}).get("clock", False):
-            widgets.append(DateTime(formatters=["%I:%M"], name="clock"))
+            # widgets.append(DateTime(formatters=["%I:%M"], name="clock")) # 12 hour clock
+            widgets.append(DateTime(formatters=["%H:%M"], name="clock")) # 24 hour clock
         if config.get("desktopwidgets", {}).get("quote", False):
             widgets.append(qoute())
         if config.get("desktopwidgets", {}).get("weather", False):
@@ -456,7 +457,8 @@ def create_widgets(config, widget_type):
                 DateTime(formatters=["%A. %d %B"], interval=10000, name="date")
             )
         if config.get("desktopwidgets", {}).get("clock", False):
-            widgets.append(DateTime(formatters=["%I:%M"], name="clock"))
+            # widgets.append(DateTime(formatters=["%I:%M"], name="clock")) # 12 hour clock
+            widgets.append(DateTime(formatters=["%H:%M"], name="clock")) # 24 hour clock
     return widgets
 
 

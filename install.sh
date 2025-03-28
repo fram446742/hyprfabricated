@@ -14,13 +14,13 @@ PACKAGES=(
     gobject-introspection
     gpu-screen-recorder
     grimblast
-    hypridle
-    hyprlock
-    hyprpicker
-    hyprsunset
+    hypridle-git
+    hyprlock-git
+    hyprpicker-git
+    hyprsunset-git
     imagemagick
     libnotify
-    matugen-bin
+    matugen
     noto-fonts-emoji
     playerctl
     python-fabric-git
@@ -31,8 +31,8 @@ PACKAGES=(
     python-setproctitle
     python-toml
     python-watchdog
-    swappy
-    swww
+    swappy-git
+    swww-git
     uwsm
     wl-clipboard
     wlinhibit

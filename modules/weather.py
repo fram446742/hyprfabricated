@@ -1,14 +1,20 @@
 import gi
 import urllib.parse
 import requests
+import json
+import time
 from gi.repository import GLib
 
 from fabric.widgets.label import Label
 from fabric.widgets.button import Button
+from fabric.utils import invoke_repeater, get_relative_path
 
 gi.require_version("Gtk", "3.0")
 import modules.icons as icons
 import config.data as data
+
+CONFIG_CACHE = None
+
 
 class Weather(Button):
     def __init__(self, **kwargs) -> None:
@@ -21,8 +27,26 @@ class Weather(Button):
         # Update every 10 minutes
         GLib.timeout_add_seconds(600, self.fetch_weather)
         self.fetch_weather()
+
+
+    def load_config(_):
+        """Load and cache config file to reduce file I/O latency."""
+        global CONFIG_CACHE
+        if CONFIG_CACHE is None:
+            try:
+                with open(get_relative_path("../config.json"), "r") as file:
+                    CONFIG_CACHE = json.load(file)
+            except Exception as e:
+                print(f"Error reading config: {e}")
+                CONFIG_CACHE = {}
+        return CONFIG_CACHE
+
+
     def get_location(self):
-        """Fetch user's city using IP geolocation."""
+        """Fetch location from config file or IP API asynchronously."""
+        config = self.load_config()
+        if city := config.get("city"):
+            return city
         try:
             response = self.session.get("https://ipinfo.io/json", timeout=5, stream=True)
             if response.ok:
@@ -30,6 +54,16 @@ class Weather(Button):
         except requests.RequestException:
             pass
         return ""
+    
+    # def get_location(self):
+    #     """Fetch user's city using IP geolocation."""
+    #     try:
+    #         response = self.session.get("https://ipinfo.io/json", timeout=5, stream=True)
+    #         if response.ok:
+    #             return response.json().get("city", "")
+    #     except requests.RequestException:
+    #         pass
+    #     return ""
 
 
     def set_visible(self, visible):

@@ -1,15 +1,15 @@
 {
     "check_for_updates": true,
-    "city": "",
+    "city": "Madrid",
     "Temprature_Unit": "C",
     "quotetype": "stoic",
-    "terminal_command": "ghostty -e",
+    "terminal_command": "kitty -e",
     "vertical": false,
     "Basic": {
         "corners": true,
         "bar": true,
         "widgets": true,
-        "dock": false
+        "dock": true
     },
     "Dock": {
         "dock_icon_size": "28",
@@ -24,21 +24,21 @@
         "datetime": true,
         "buttonpower": true,
         "Barright": {
-            "metrics": false,
+            "metrics": true,
             "controls": true,
             "battery": true,
-            "systemprofiles": false,
+            "systemprofiles": true,
             "languageindicator": true
         },
         "Barleft": {
-            "weather": false,
+            "weather": true,
             "overview": true,
             "networkapplet": true
         }
     },
-    "widgetstyle": "basic",
+    "widgetstyle": "full",
     "desktopwidgets": {
-        "activation": false,
+        "activation": true,
         "date": true,
         "clock": true,
         "quote": true,
@@ -46,7 +46,7 @@
         "systeminfo": false
     },
     "misc": {
-        "otherplayers": false
+        "otherplayers": true
     },
     "tooltip": {
         "Temprature_Unit_tooltip": "C for Celsius, F for Fahrenheit",
