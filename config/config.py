@@ -742,7 +742,7 @@ uwsm-app "$python_output" &
         response = dialog.run()
         dialog.destroy()
 
-        FILE_URL = "https://raw.githubusercontent.com/tr1xem/hyprfabricated/refs/heads/main/config.json"
+        FILE_URL = "https://raw.githubusercontent.com/fram446742/hyprfabricated/refs/heads/main/config.json"
         DESTINATION_FILE = get_relative_path("../config.json")
         TEMP_FILE = "/tmp/temp_config.json"
 

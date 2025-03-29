@@ -3,7 +3,7 @@
     "city": "Madrid",
     "Temprature_Unit": "C",
     "quotetype": "stoic",
-    "terminal_command": "kitty -e",
+    "terminal_command": "kitty",
     "vertical": false,
     "Basic": {
         "corners": true,
@@ -12,7 +12,7 @@
         "dock": true
     },
     "Dock": {
-        "dock_icon_size": "28",
+        "dock_icon_size": "30",
         "dock_always_occluded": false
     },
     "Bar": {
@@ -38,7 +38,7 @@
     },
     "widgetstyle": "full",
     "desktopwidgets": {
-        "activation": true,
+        "activation": false,
         "date": true,
         "clock": true,
         "quote": true,

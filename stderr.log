@@ -1,0 +1,704 @@
+2025-03-29 13:06:52.218 | WARNING  | fabric.widgets.wayland:do_handle_post_show_request:293 - [WaylandWindow] showing an empty window is not recommended, some compositors might freak out.
+2025-03-29 13:06:52.225 | DEBUG    | fabric.hyprland.widgets:do_initialize:454 - [Language] found language: Spanish for keyboard video-bus
+2025-03-29 13:06:52.225 | INFO     | fabric.hyprland.widgets:do_initialize:464 - [Language] Set language: Spanish for keyboard: .*
+2025-03-29 13:06:52.225 | INFO     | fabric.hyprland.widgets:on_ready:416 - [Language] Connected to the hyprland socket
+2025-03-29 13:06:52.225 | DEBUG    | fabric.hyprland.widgets:do_initialize:454 - [Language] found language: Spanish for keyboard video-bus
+2025-03-29 13:06:52.225 | INFO     | fabric.hyprland.widgets:do_initialize:464 - [Language] Set language: Spanish for keyboard: .*
+2025-03-29 13:06:52.225 | INFO     | fabric.hyprland.widgets:on_ready:416 - [Language] Connected to the hyprland socket
+2025-03-29 13:06:52.232 | INFO     | services.brightness:__init__:71 - [94mBrightness service initialized for device: amdgpu_bl1
+2025-03-29 13:06:52.345 | WARNING  | fabric.widgets.wayland:do_handle_post_show_request:293 - [WaylandWindow] showing an empty window is not recommended, some compositors might freak out.
+2025-03-29 13:06:52.348 | DEBUG    | modules.notifications:_cleanup_orphan_cached_images:841 - Starting orphan cached image cleanup.
+2025-03-29 13:06:52.348 | DEBUG    | modules.notifications:_cleanup_orphan_cached_images:848 - No cached image files found, skipping cleanup.
+
+(main.py:176825): Gtk-CRITICAL **: 13:06:52.455: gtk_box_pack: assertion '_gtk_widget_get_parent (child) == NULL' failed
+
+(main.py:176825): Gtk-CRITICAL **: 13:06:52.456: gtk_box_pack: assertion '_gtk_widget_get_parent (child) == NULL' failed
+
+(main.py:176825): Gtk-CRITICAL **: 13:06:52.457: gtk_box_pack: assertion '_gtk_widget_get_parent (child) == NULL' failed
+2025-03-29 13:06:52.541 | INFO     | fabric.hyprland.widgets:on_ready:362 - [ActiveWindow] Connected to the hyprland socket
+2025-03-29 13:06:52.542 | DEBUG    | modules.cavalcade:_start_io_reader:90 - Activating GLib IO watch for cava stream handler
+2025-03-29 13:06:52.542 | DEBUG    | modules.cavalcade:_run_process:75 - Launching cava process...
+2025-03-29 13:06:52.549 | DEBUG    | modules.cavalcade:_run_process:84 - cava successfully launched!
+2025-03-29 13:06:52.572 | WARNING  | fabric.widgets.wayland:do_handle_post_show_request:293 - [WaylandWindow] showing an empty window is not recommended, some compositors might freak out.
+2025-03-29 13:06:52.598 | INFO     | fabric.utils.helpers:apply_macro_replacement:405 - [FASS] applying a macro with name overview_width
+2025-03-29 13:06:52.598 | INFO     | fabric.utils.helpers:apply_macro_replacement:405 - [FASS] applying a macro with name overview_height
+2025-03-29 13:06:52.598 | INFO     | fabric.utils.helpers:apply_macro_replacement:405 - [FASS] applying a macro with name dock_nmargin
+2025-03-29 13:06:52.598 | INFO     | fabric.utils.helpers:apply_macro_replacement:405 - [FASS] applying a macro with name dock_sep
+2025-03-29 13:06:52.598 | INFO     | fabric.utils.helpers:apply_macro_replacement:405 - [FASS] applying a macro with name ws_width
+2025-03-29 13:06:52.598 | INFO     | fabric.utils.helpers:apply_macro_replacement:405 - [FASS] applying a macro with name ws_height
+2025-03-29 13:06:52.611 | DEBUG    | fabric.core.application:do_activate:355 - [Fabric] opening a DBus client for Application with name hyprfabricated
+2025-03-29 13:06:52.613 | INFO     | fabric.bluetooth.service:on_device_added:275 - [Bluetooth] Adding device: 80:20:FD:FD:B9:79
+2025-03-29 13:06:52.615 | WARNING  | fabric.notifications.service:<lambda>:438 - [Notifications] couldn't own the DBus name, another notifications daemon is probably running.
+2025-03-29 13:06:52.651 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:06:52.651 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:06:52.651 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:06:52.651 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:06:52.652 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:06:52.652 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:06:52.654 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Speakers] Adding stream 1 with name alsa_output.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:06:52.654 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 1
+2025-03-29 13:06:52.655 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Speakers] Adding stream 2 with name alsa_output.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:06:52.655 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 2
+2025-03-29 13:06:52.656 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Speakers] Adding stream 3 with name alsa_output.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:06:52.656 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 3
+2025-03-29 13:06:52.656 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Speakers] Adding stream 4 with name alsa_output.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:06:52.656 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 4
+2025-03-29 13:06:52.658 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Speakers] Adding stream 5 with name alsa_output.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:06:52.658 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 5
+2025-03-29 13:06:52.658 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Speakers] Adding stream 6 with name alsa_output.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:06:52.658 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 6
+2025-03-29 13:06:52.659 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Microphones] Adding stream 7 with name alsa_input.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:06:52.659 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 7
+2025-03-29 13:06:52.659 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Microphones] Adding stream 8 with name alsa_input.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:06:52.659 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 8
+2025-03-29 13:06:52.660 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Microphones] Adding stream 9 with name alsa_input.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:06:52.660 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 9
+2025-03-29 13:06:52.660 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Microphones] Adding stream 10 with name alsa_input.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:06:52.661 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 10
+2025-03-29 13:06:52.661 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Microphones] Adding stream 11 with name alsa_input.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:06:52.661 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 11
+2025-03-29 13:06:52.662 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Microphones] Adding stream 12 with name alsa_input.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:06:52.662 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 12
+2025-03-29 13:06:52.663 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Applications] Adding stream 13 with name Chromium
+2025-03-29 13:06:52.663 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Applications] Adding stream 14 with name Chromium
+2025-03-29 13:06:52.663 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Applications] Adding stream 15 with name Chromium
+2025-03-29 13:06:52.664 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Applications] Adding stream 16 with name Chromium
+2025-03-29 13:06:52.664 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Applications] Adding stream 17 with name Chromium
+2025-03-29 13:06:52.664 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Applications] Adding stream 18 with name Chromium
+2025-03-29 13:06:52.665 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Recorders] Adding stream 19 with name cava
+2025-03-29 13:06:52.665 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Recorders] Adding stream 20 with name cava
+2025-03-29 13:06:52.666 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Recorders] Adding stream 21 with name cava
+2025-03-29 13:06:52.666 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Recorders] Adding stream 22 with name cava
+2025-03-29 13:06:52.666 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Recorders] Adding stream 23 with name cava
+2025-03-29 13:06:52.667 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Recorders] Adding stream 24 with name cava
+2025-03-29 13:07:17.726 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Vladimir-csp/app2unit: Launches Desktop Entries as Systemd user units — Zen Browser
+2025-03-29 13:07:18.067 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window com.github.th_ch.youtube_music, Secret Place - YouTube Music
+2025-03-29 13:07:18.792 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window , 
+2025-03-29 13:07:19.105 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window com.github.th_ch.youtube_music, Secret Place - YouTube Music
+2025-03-29 13:07:19.570 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Vladimir-csp/app2unit: Launches Desktop Entries as Systemd user units — Zen Browser
+2025-03-29 13:07:21.408 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f1a3f40
+2025-03-29 13:07:21.421 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:07:21.468 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window , 
+2025-03-29 13:07:21.658 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, install.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:08:01.409 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, gamemode.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:08:18.800 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, refreshrate.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+WARNING:py.warnings:/home/franc/dotfiles-arch/.config/hyprfabricated/services/mpris.py:100: Warning: g_object_notify: object class 'services+mpris+MprisPlayer' has no property named 'seeked'
+  self.notify(name)
+
+2025-03-29 13:09:25.912 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Applications] Removing stream 13 with name Chromium
+2025-03-29 13:09:25.913 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Applications] Removing stream 14 with name Chromium
+2025-03-29 13:09:25.913 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Applications] Removing stream 15 with name Chromium
+2025-03-29 13:09:25.913 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Applications] Removing stream 17 with name Chromium
+2025-03-29 13:09:25.913 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Applications] Removing stream 16 with name Chromium
+2025-03-29 13:09:25.913 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Applications] Removing stream 18 with name Chromium
+2025-03-29 13:14:12.469 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window , 
+2025-03-29 13:16:43.075 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:16:43.075 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+2025-03-29 13:16:43.076 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Microphones] Removing stream 7 with name alsa_input.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:16:43.076 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:16:43.076 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+2025-03-29 13:16:43.076 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Microphones] Removing stream 8 with name alsa_input.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:16:43.076 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:16:43.076 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+2025-03-29 13:16:43.076 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Microphones] Removing stream 9 with name alsa_input.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:16:43.076 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:16:43.076 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+2025-03-29 13:16:43.077 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Microphones] Removing stream 12 with name alsa_input.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:16:43.077 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:16:43.077 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+2025-03-29 13:16:43.077 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Microphones] Removing stream 10 with name alsa_input.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:16:43.077 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:16:43.077 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+2025-03-29 13:16:43.077 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Microphones] Removing stream 11 with name alsa_input.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:16:43.077 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 4294967295
+2025-03-29 13:16:43.077 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+2025-03-29 13:16:43.078 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Speakers] Removing stream 1 with name alsa_output.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:16:43.078 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 4294967295
+2025-03-29 13:16:43.078 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+2025-03-29 13:16:43.078 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Speakers] Removing stream 2 with name alsa_output.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:16:43.078 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 4294967295
+2025-03-29 13:16:43.078 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+2025-03-29 13:16:43.078 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Speakers] Removing stream 3 with name alsa_output.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:16:43.078 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 4294967295
+2025-03-29 13:16:43.078 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+2025-03-29 13:16:43.078 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Speakers] Removing stream 4 with name alsa_output.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:16:43.078 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 4294967295
+2025-03-29 13:16:43.078 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+2025-03-29 13:16:43.079 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Speakers] Removing stream 5 with name alsa_output.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:16:43.079 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 4294967295
+2025-03-29 13:16:43.079 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+2025-03-29 13:16:43.079 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Speakers] Removing stream 6 with name alsa_output.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:16:43.080 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:16:43.080 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea1a96b0' has no handler with id '5434'
+  return func(*args, **kwargs)
+
+2025-03-29 13:16:43.080 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:16:43.080 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea18cd90' has no handler with id '5445'
+  return func(*args, **kwargs)
+
+2025-03-29 13:16:43.080 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:16:43.080 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea1ac1d0' has no handler with id '5457'
+  return func(*args, **kwargs)
+
+2025-03-29 13:16:43.080 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:16:43.080 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea1b3bf0' has no handler with id '5493'
+  return func(*args, **kwargs)
+
+2025-03-29 13:16:43.080 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:16:43.080 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea1aecb0' has no handler with id '5468'
+  return func(*args, **kwargs)
+
+2025-03-29 13:16:43.081 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:16:43.081 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea1af640' has no handler with id '5481'
+  return func(*args, **kwargs)
+
+2025-03-29 13:16:43.081 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Speakers] Adding stream 31 with name auto_null
+2025-03-29 13:16:43.081 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 31
+2025-03-29 13:16:43.081 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6be9cfbbe0' has no handler with id '5364'
+  return func(*args, **kwargs)
+
+2025-03-29 13:16:43.082 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Speakers] Adding stream 32 with name auto_null
+2025-03-29 13:16:43.082 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 32
+2025-03-29 13:16:43.082 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea189300' has no handler with id '5376'
+  return func(*args, **kwargs)
+
+2025-03-29 13:16:43.083 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Speakers] Adding stream 33 with name auto_null
+2025-03-29 13:16:43.083 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 33
+2025-03-29 13:16:43.083 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea19eb50' has no handler with id '5387'
+  return func(*args, **kwargs)
+
+2025-03-29 13:16:43.083 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Speakers] Adding stream 34 with name auto_null
+2025-03-29 13:16:43.083 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 34
+2025-03-29 13:16:43.083 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea195df0' has no handler with id '5400'
+  return func(*args, **kwargs)
+
+2025-03-29 13:16:43.084 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Speakers] Adding stream 35 with name auto_null
+2025-03-29 13:16:43.084 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 35
+2025-03-29 13:16:43.084 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea196b30' has no handler with id '5412'
+  return func(*args, **kwargs)
+
+2025-03-29 13:16:43.085 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Speakers] Adding stream 36 with name auto_null
+2025-03-29 13:16:43.085 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 36
+2025-03-29 13:16:43.085 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea1a9130' has no handler with id '5423'
+  return func(*args, **kwargs)
+
+
+(main.py:176825): LIBDBUSMENU-GLIB-WARNING **: 13:16:43.096: Unable to replace properties on 0: Error getting properties for ID
+Traceback (most recent call last):
+  File "/home/franc/dotfiles-arch/.config/hyprfabricated/modules/metrics.py", line 555, in update_network
+    primary_device = self.network_client.primary_device
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/franc/.local/lib/python3.13/site-packages/fabric/core/service.py", line 154, in __get__
+    return super().__get__(instance, klass)  # type: ignore
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/franc/.local/lib/python3.13/site-packages/gi/_propertyhelper.py", line 207, in __get__
+    value = self.fget(instance)
+  File "/home/franc/dotfiles-arch/.config/hyprfabricated/services/network.py", line 323, in primary_device
+    return self._get_primary_device()
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/franc/dotfiles-arch/.config/hyprfabricated/services/network.py", line 308, in _get_primary_device
+    in str(self._client.get_primary_connection().get_connection_type())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get_connection_type'
+2025-03-29 13:31:42.608 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 4294967295
+2025-03-29 13:31:42.608 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+2025-03-29 13:31:42.608 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Speakers] Removing stream 31 with name auto_null
+2025-03-29 13:31:42.608 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 4294967295
+2025-03-29 13:31:42.608 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+2025-03-29 13:31:42.608 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Speakers] Removing stream 32 with name auto_null
+2025-03-29 13:31:42.609 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 4294967295
+2025-03-29 13:31:42.609 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+2025-03-29 13:31:42.609 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Speakers] Removing stream 33 with name auto_null
+2025-03-29 13:31:42.609 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 4294967295
+2025-03-29 13:31:42.609 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+2025-03-29 13:31:42.609 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Speakers] Removing stream 34 with name auto_null
+2025-03-29 13:31:42.609 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 4294967295
+2025-03-29 13:31:42.609 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+2025-03-29 13:31:42.609 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Speakers] Removing stream 35 with name auto_null
+2025-03-29 13:31:42.609 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 4294967295
+2025-03-29 13:31:42.609 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+2025-03-29 13:31:42.610 | INFO     | fabric.audio.service:on_stream_removed:320 - [Audio][Speakers] Removing stream 36 with name auto_null
+
+(main.py:176825): LIBDBUSMENU-GLIB-WARNING **: 13:31:42.611: Unable to replace properties on 0: Error getting properties for ID
+2025-03-29 13:31:42.612 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:31:42.613 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea1a96b0' has no handler with id '5434'
+  return func(*args, **kwargs)
+
+2025-03-29 13:31:42.613 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:31:42.613 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea18cd90' has no handler with id '5445'
+  return func(*args, **kwargs)
+
+2025-03-29 13:31:42.613 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:31:42.613 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea1ac1d0' has no handler with id '5457'
+  return func(*args, **kwargs)
+
+2025-03-29 13:31:42.613 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:31:42.613 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea1b3bf0' has no handler with id '5493'
+  return func(*args, **kwargs)
+
+2025-03-29 13:31:42.613 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:31:42.613 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea1aecb0' has no handler with id '5468'
+  return func(*args, **kwargs)
+
+2025-03-29 13:31:42.613 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 4294967295
+2025-03-29 13:31:42.613 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea1af640' has no handler with id '5481'
+  return func(*args, **kwargs)
+
+2025-03-29 13:31:42.614 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Speakers] Adding stream 37 with name alsa_output.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:31:42.614 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 37
+2025-03-29 13:31:42.614 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea0919d0' has no handler with id '22587'
+  return func(*args, **kwargs)
+
+2025-03-29 13:31:42.615 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Speakers] Adding stream 38 with name alsa_output.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:31:42.615 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 38
+2025-03-29 13:31:42.615 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea19ee00' has no handler with id '22599'
+  return func(*args, **kwargs)
+
+2025-03-29 13:31:42.615 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Speakers] Adding stream 39 with name alsa_output.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:31:42.615 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 39
+2025-03-29 13:31:42.615 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6be9c16770' has no handler with id '22610'
+  return func(*args, **kwargs)
+
+2025-03-29 13:31:42.616 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Speakers] Adding stream 40 with name alsa_output.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:31:42.616 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 40
+2025-03-29 13:31:42.616 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea1615e0' has no handler with id '22622'
+  return func(*args, **kwargs)
+
+2025-03-29 13:31:42.617 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Speakers] Adding stream 41 with name alsa_output.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:31:42.617 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 41
+2025-03-29 13:31:42.617 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6be9c775f0' has no handler with id '22634'
+  return func(*args, **kwargs)
+
+2025-03-29 13:31:42.617 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Speakers] Adding stream 42 with name alsa_output.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:31:42.617 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Speaker] Changing default speaker to 42
+2025-03-29 13:31:42.617 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Speaker] Removing old speaker stream
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/gi/overrides/GObject.py:491: Warning: ../glib/gobject/gsignal.c:2699: instance '0x5a6bea152430' has no handler with id '22645'
+  return func(*args, **kwargs)
+
+2025-03-29 13:31:42.618 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Microphones] Adding stream 43 with name alsa_input.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:31:42.618 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 43
+2025-03-29 13:31:42.618 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+2025-03-29 13:31:42.618 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Microphones] Adding stream 44 with name alsa_input.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:31:42.619 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 44
+2025-03-29 13:31:42.619 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+2025-03-29 13:31:42.619 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Microphones] Adding stream 45 with name alsa_input.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:31:42.619 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 45
+2025-03-29 13:31:42.619 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+2025-03-29 13:31:42.620 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Microphones] Adding stream 46 with name alsa_input.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:31:42.620 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 46
+2025-03-29 13:31:42.620 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+2025-03-29 13:31:42.620 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Microphones] Adding stream 47 with name alsa_input.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:31:42.620 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 47
+2025-03-29 13:31:42.620 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+2025-03-29 13:31:42.621 | INFO     | fabric.audio.service:on_stream_added:307 - [Audio][Microphones] Adding stream 48 with name alsa_input.pci-0000_06_00.6.analog-stereo
+2025-03-29 13:31:42.621 | INFO     | fabric.audio.service:on_default_stream_changed:260 - [Audio][Microphone] Changing default microphone to 48
+2025-03-29 13:31:42.621 | INFO     | fabric.audio.service:on_default_stream_changed:263 - [Audio][Microphone] Removing old microphone stream
+2025-03-29 13:31:52.356 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: video-bus, Language: Spanish, Match: True
+2025-03-29 13:31:52.356 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: video-bus, Language: Spanish, Match: True
+2025-03-29 13:31:52.368 | DEBUG    | fabric.hyprland.widgets:do_initialize:454 - [Language] found language: Spanish for keyboard video-bus
+2025-03-29 13:31:52.368 | INFO     | fabric.hyprland.widgets:do_initialize:464 - [Language] Set language: Spanish for keyboard: .*
+2025-03-29 13:31:52.368 | INFO     | fabric.hyprland.widgets:on_ready:416 - [Language] Connected to the hyprland socket
+2025-03-29 13:31:52.370 | DEBUG    | fabric.hyprland.widgets:do_initialize:454 - [Language] found language: Spanish for keyboard video-bus
+2025-03-29 13:31:52.370 | INFO     | fabric.hyprland.widgets:do_initialize:464 - [Language] Set language: Spanish for keyboard: .*
+2025-03-29 13:31:52.370 | INFO     | fabric.hyprland.widgets:on_ready:416 - [Language] Connected to the hyprland socket
+2025-03-29 13:31:52.372 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: power-button, Language: Spanish, Match: True
+2025-03-29 13:31:52.373 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: power-button, Language: Spanish, Match: True
+2025-03-29 13:31:52.373 | DEBUG    | fabric.hyprland.widgets:do_initialize:454 - [Language] found language: Spanish for keyboard video-bus
+2025-03-29 13:31:52.374 | INFO     | fabric.hyprland.widgets:do_initialize:464 - [Language] Set language: Spanish for keyboard: .*
+2025-03-29 13:31:52.374 | INFO     | fabric.hyprland.widgets:on_ready:416 - [Language] Connected to the hyprland socket
+2025-03-29 13:31:52.374 | DEBUG    | fabric.hyprland.widgets:do_initialize:454 - [Language] found language: Spanish for keyboard video-bus
+2025-03-29 13:31:52.374 | INFO     | fabric.hyprland.widgets:do_initialize:464 - [Language] Set language: Spanish for keyboard: .*
+2025-03-29 13:31:52.374 | INFO     | fabric.hyprland.widgets:on_ready:416 - [Language] Connected to the hyprland socket
+2025-03-29 13:31:52.374 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: power-button, Language: Spanish, Match: True
+2025-03-29 13:31:52.374 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: power-button, Language: Spanish, Match: True
+2025-03-29 13:31:52.375 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: sleep-button, Language: Spanish, Match: True
+2025-03-29 13:31:52.375 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: sleep-button, Language: Spanish, Match: True
+2025-03-29 13:31:52.375 | DEBUG    | fabric.hyprland.widgets:do_initialize:454 - [Language] found language: Spanish for keyboard video-bus
+2025-03-29 13:31:52.375 | INFO     | fabric.hyprland.widgets:do_initialize:464 - [Language] Set language: Spanish for keyboard: .*
+2025-03-29 13:31:52.375 | INFO     | fabric.hyprland.widgets:on_ready:416 - [Language] Connected to the hyprland socket
+2025-03-29 13:31:52.376 | DEBUG    | fabric.hyprland.widgets:do_initialize:454 - [Language] found language: Spanish for keyboard video-bus
+2025-03-29 13:31:52.376 | INFO     | fabric.hyprland.widgets:do_initialize:464 - [Language] Set language: Spanish for keyboard: .*
+2025-03-29 13:31:52.376 | INFO     | fabric.hyprland.widgets:on_ready:416 - [Language] Connected to the hyprland socket
+2025-03-29 13:31:52.376 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: sleep-button, Language: Spanish, Match: True
+2025-03-29 13:31:52.376 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: sleep-button, Language: Spanish, Match: True
+2025-03-29 13:31:52.376 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: sleep-button, Language: Spanish, Match: True
+2025-03-29 13:31:52.376 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: sleep-button, Language: Spanish, Match: True
+2025-03-29 13:31:52.377 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: asus-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.377 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: asus-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.383 | DEBUG    | fabric.hyprland.widgets:do_initialize:454 - [Language] found language: Spanish for keyboard video-bus
+2025-03-29 13:31:52.383 | INFO     | fabric.hyprland.widgets:do_initialize:464 - [Language] Set language: Spanish for keyboard: .*
+2025-03-29 13:31:52.383 | INFO     | fabric.hyprland.widgets:on_ready:416 - [Language] Connected to the hyprland socket
+2025-03-29 13:31:52.384 | DEBUG    | fabric.hyprland.widgets:do_initialize:454 - [Language] found language: Spanish for keyboard video-bus
+2025-03-29 13:31:52.384 | INFO     | fabric.hyprland.widgets:do_initialize:464 - [Language] Set language: Spanish for keyboard: .*
+2025-03-29 13:31:52.384 | INFO     | fabric.hyprland.widgets:on_ready:416 - [Language] Connected to the hyprland socket
+2025-03-29 13:31:52.384 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: asus-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.384 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: asus-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.384 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: asus-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.384 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: asus-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.385 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: asus-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.385 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: asus-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.385 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: sinowealth-wired-gaming-mouse-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.385 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: sinowealth-wired-gaming-mouse-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.386 | DEBUG    | fabric.hyprland.widgets:do_initialize:454 - [Language] found language: Spanish for keyboard video-bus
+2025-03-29 13:31:52.386 | INFO     | fabric.hyprland.widgets:do_initialize:464 - [Language] Set language: Spanish for keyboard: .*
+2025-03-29 13:31:52.386 | INFO     | fabric.hyprland.widgets:on_ready:416 - [Language] Connected to the hyprland socket
+2025-03-29 13:31:52.386 | DEBUG    | fabric.hyprland.widgets:do_initialize:454 - [Language] found language: Spanish for keyboard video-bus
+2025-03-29 13:31:52.386 | INFO     | fabric.hyprland.widgets:do_initialize:464 - [Language] Set language: Spanish for keyboard: .*
+2025-03-29 13:31:52.386 | INFO     | fabric.hyprland.widgets:on_ready:416 - [Language] Connected to the hyprland socket
+2025-03-29 13:31:52.387 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: sinowealth-wired-gaming-mouse-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.387 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: sinowealth-wired-gaming-mouse-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.387 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: sinowealth-wired-gaming-mouse-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.387 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: sinowealth-wired-gaming-mouse-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.387 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: sinowealth-wired-gaming-mouse-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.387 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: sinowealth-wired-gaming-mouse-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.387 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: sinowealth-wired-gaming-mouse-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.387 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: sinowealth-wired-gaming-mouse-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.388 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: asus-wmi-hotkeys, Language: Spanish, Match: True
+2025-03-29 13:31:52.388 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: asus-wmi-hotkeys, Language: Spanish, Match: True
+2025-03-29 13:31:52.388 | DEBUG    | fabric.hyprland.widgets:do_initialize:454 - [Language] found language: Spanish for keyboard video-bus
+2025-03-29 13:31:52.388 | INFO     | fabric.hyprland.widgets:do_initialize:464 - [Language] Set language: Spanish for keyboard: .*
+2025-03-29 13:31:52.388 | INFO     | fabric.hyprland.widgets:on_ready:416 - [Language] Connected to the hyprland socket
+2025-03-29 13:31:52.389 | DEBUG    | fabric.hyprland.widgets:do_initialize:454 - [Language] found language: Spanish for keyboard video-bus
+2025-03-29 13:31:52.389 | INFO     | fabric.hyprland.widgets:do_initialize:464 - [Language] Set language: Spanish for keyboard: .*
+2025-03-29 13:31:52.389 | INFO     | fabric.hyprland.widgets:on_ready:416 - [Language] Connected to the hyprland socket
+2025-03-29 13:31:52.389 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: asus-wmi-hotkeys, Language: Spanish, Match: True
+2025-03-29 13:31:52.389 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: asus-wmi-hotkeys, Language: Spanish, Match: True
+2025-03-29 13:31:52.390 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: asus-wmi-hotkeys, Language: Spanish, Match: True
+2025-03-29 13:31:52.390 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: asus-wmi-hotkeys, Language: Spanish, Match: True
+2025-03-29 13:31:52.390 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: asus-wmi-hotkeys, Language: Spanish, Match: True
+2025-03-29 13:31:52.390 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: asus-wmi-hotkeys, Language: Spanish, Match: True
+2025-03-29 13:31:52.390 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: asus-wmi-hotkeys, Language: Spanish, Match: True
+2025-03-29 13:31:52.390 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: asus-wmi-hotkeys, Language: Spanish, Match: True
+2025-03-29 13:31:52.390 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: asus-wmi-hotkeys, Language: Spanish, Match: True
+2025-03-29 13:31:52.390 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: asus-wmi-hotkeys, Language: Spanish, Match: True
+2025-03-29 13:31:52.391 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: at-translated-set-2-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.391 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: at-translated-set-2-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.391 | DEBUG    | fabric.hyprland.widgets:do_initialize:454 - [Language] found language: Spanish for keyboard video-bus
+2025-03-29 13:31:52.391 | INFO     | fabric.hyprland.widgets:do_initialize:464 - [Language] Set language: Spanish for keyboard: .*
+2025-03-29 13:31:52.391 | INFO     | fabric.hyprland.widgets:on_ready:416 - [Language] Connected to the hyprland socket
+2025-03-29 13:31:52.392 | DEBUG    | fabric.hyprland.widgets:do_initialize:454 - [Language] found language: Spanish for keyboard video-bus
+2025-03-29 13:31:52.392 | INFO     | fabric.hyprland.widgets:do_initialize:464 - [Language] Set language: Spanish for keyboard: .*
+2025-03-29 13:31:52.392 | INFO     | fabric.hyprland.widgets:on_ready:416 - [Language] Connected to the hyprland socket
+2025-03-29 13:31:52.392 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: at-translated-set-2-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.392 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: at-translated-set-2-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.392 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: at-translated-set-2-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.392 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: at-translated-set-2-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.392 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: at-translated-set-2-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.392 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: at-translated-set-2-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.393 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: at-translated-set-2-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.393 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: at-translated-set-2-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.393 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: at-translated-set-2-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.393 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: at-translated-set-2-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.393 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: at-translated-set-2-keyboard, Language: Spanish, Match: True
+2025-03-29 13:31:52.393 | DEBUG    | fabric.hyprland.widgets:on_activelayout:431 - [Language] Keyboard: at-translated-set-2-keyboard, Language: Spanish, Match: True
+2025-03-29 13:33:08.488 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window , 
+2025-03-29 13:33:09.051 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window com.github.th_ch.youtube_music, YouTube Music
+2025-03-29 13:33:09.766 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window , 
+2025-03-29 13:33:12.503 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:33:12.526 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:33:12.713 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Vladimir-csp/app2unit: Launches Desktop Entries as Systemd user units — Zen Browser
+2025-03-29 13:34:28.847 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:34:29.119 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, catch systemd events shell - Buscar con Google — Zen Browser
+2025-03-29 13:34:53.398 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:34:53.463 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, systemd/Timers - ArchWiki — Zen Browser
+2025-03-29 13:35:29.889 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:35:29.960 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Systemd Timers for Scheduling Tasks - Fedora Magazine — Zen Browser
+2025-03-29 13:35:54.714 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, refreshrate.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:35:54.971 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Systemd Timers for Scheduling Tasks - Fedora Magazine — Zen Browser
+2025-03-29 13:35:55.170 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window com.github.th_ch.youtube_music, YouTube Music
+2025-03-29 13:35:55.342 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window , 
+2025-03-29 13:35:56.581 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window thunar, franc - Thunar
+2025-03-29 13:35:56.595 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+
+(main.py:176825): LIBDBUSMENU-GLIB-WARNING **: 13:36:23.574: Unable to replace properties on 0: Error getting properties for ID
+
+(main.py:176825): LIBDBUSMENU-GLIB-WARNING **: 13:36:23.660: Unable to replace properties on 0: Error getting properties for ID
+
+(main.py:176825): LIBDBUSMENU-GLIB-WARNING **: 13:36:23.760: Unable to replace properties on 0: Error getting properties for ID
+
+(main.py:176825): LIBDBUSMENU-GLIB-WARNING **: 13:36:23.982: Unable to replace properties on 0: Error getting properties for ID
+
+(main.py:176825): LIBDBUSMENU-GLIB-WARNING **: 13:36:24.160: Unable to replace properties on 0: Error getting properties for ID
+2025-03-29 13:36:32.633 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window , 
+2025-03-29 13:36:32.646 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window thunar, franc - Thunar
+2025-03-29 13:36:35.597 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, refreshrate.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:36:36.120 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Systemd Timers for Scheduling Tasks - Fedora Magazine — Zen Browser
+2025-03-29 13:36:36.353 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window com.github.th_ch.youtube_music, YouTube Music
+2025-03-29 13:36:36.967 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Systemd Timers for Scheduling Tasks - Fedora Magazine — Zen Browser
+2025-03-29 13:36:37.782 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window thunar, franc - Thunar
+2025-03-29 13:36:41.148 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window dev.zed.Zed-Preview, .histfile
+2025-03-29 13:36:41.167 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:36:41.202 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window dev.zed.Zed-Preview, .histfile — .histfile
+2025-03-29 13:37:05.209 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:37:05.230 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f33fdd0
+2025-03-29 13:37:05.242 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window thunar, franc - Thunar
+2025-03-29 13:37:06.070 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:37:06.089 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35eec10e0
+2025-03-29 13:37:06.100 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window , 
+2025-03-29 13:37:06.533 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, refreshrate.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:37:07.219 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Systemd Timers for Scheduling Tasks - Fedora Magazine — Zen Browser
+2025-03-29 13:37:08.285 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, systemd/Timers - ArchWiki — Zen Browser
+2025-03-29 13:37:08.793 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, catch systemd events shell - Buscar con Google — Zen Browser
+2025-03-29 13:37:15.038 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:37:15.057 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, catch udev events shell - Buscar con Google — Zen Browser
+2025-03-29 13:37:40.426 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, kitty
+2025-03-29 13:37:40.461 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:37:40.605 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, zsh
+2025-03-29 13:37:40.624 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:37:45.065 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, sudo pacman -S udev_monitor
+2025-03-29 13:37:52.619 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:37:59.353 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, yay -S udev_monitor
+2025-03-29 13:37:59.875 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:38:01.094 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:38:01.122 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f3369e0
+2025-03-29 13:38:01.136 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, catch udev events shell - Buscar con Google — Zen Browser
+2025-03-29 13:38:10.517 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:38:10.604 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Reddit - The heart of the internet — Zen Browser
+2025-03-29 13:38:10.998 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Get udev to handle lid switch events? : r/linuxquestions — Zen Browser
+2025-03-29 13:38:25.473 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, catch udev events shell - Buscar con Google — Zen Browser
+2025-03-29 13:38:33.708 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:38:33.761 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, automatic refresh rate change hyprland - Buscar con Google — Zen Browser
+2025-03-29 13:38:39.283 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:38:39.355 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Reddit - The heart of the internet — Zen Browser
+2025-03-29 13:38:39.860 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Refresh rate : r/hyprland — Zen Browser
+2025-03-29 13:38:44.361 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, automatic refresh rate change hyprland - Buscar con Google — Zen Browser
+2025-03-29 13:39:01.918 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:39:01.946 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, automatic refresh rate change - Buscar con Google — Zen Browser
+2025-03-29 13:39:22.524 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:39:22.578 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, automatic refresh rate change linux - Buscar con Google — Zen Browser
+2025-03-29 13:39:25.054 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:39:25.144 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Reddit - The heart of the internet — Zen Browser
+2025-03-29 13:39:25.583 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Is there a way to automatically lower the refresh rate of screen when on battery mode? : r/Fedora — Zen Browser
+2025-03-29 13:39:36.445 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:39:36.800 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, linux change refresh rate programmatically at DuckDuckGo — Zen Browser
+2025-03-29 13:39:44.213 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:39:44.296 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, [SOLVED] Set default resolution and refresh rate with xorg.conf / Multimedia and Games / Arch Linux Forums — Zen Browser
+2025-03-29 13:39:46.728 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, linux change refresh rate programmatically at DuckDuckGo — Zen Browser
+2025-03-29 13:39:47.994 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:39:48.073 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, 12.04 - How to see/change screen refresh rate or monitor frequency? - Ask Ubuntu — Zen Browser
+2025-03-29 13:40:03.734 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, linux change refresh rate programmatically at DuckDuckGo — Zen Browser
+2025-03-29 13:40:10.681 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Is there a way to automatically lower the refresh rate of screen when on battery mode? : r/Fedora — Zen Browser
+2025-03-29 13:40:41.178 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, kitty
+2025-03-29 13:40:41.205 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:40:41.292 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, zsh
+2025-03-29 13:40:41.309 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:40:42.748 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, gnome-monitor-config
+2025-03-29 13:40:42.762 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:40:48.653 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, yay -S gnome-monitor-config
+2025-03-29 13:41:01.410 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:41:02.481 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, gnome-monitor-config
+2025-03-29 13:41:02.495 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:41:06.688 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, gnome-monitor-config --help
+2025-03-29 13:41:06.702 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:41:14.890 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Is there a way to automatically lower the refresh rate of screen when on battery mode? : r/Fedora — Zen Browser
+2025-03-29 13:41:18.861 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:41:26.435 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, yay -R gnome-monitor-config
+2025-03-29 13:41:26.482 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:41:40.722 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, sudo pacman -R gnome-monitor-config
+2025-03-29 13:41:40.753 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:41:56.466 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, sudo pacman -R gnome-monitor-config-git
+2025-03-29 13:41:57.807 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:42:00.861 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:42:00.880 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f33edc0
+2025-03-29 13:42:00.897 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Is there a way to automatically lower the refresh rate of screen when on battery mode? : r/Fedora — Zen Browser
+2025-03-29 13:42:01.795 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, automatic refresh rate change linux - Buscar con Google — Zen Browser
+2025-03-29 13:42:08.313 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:42:08.351 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, clean up arch - Buscar con Google — Zen Browser
+2025-03-29 13:42:10.053 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:42:10.083 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, System maintenance - ArchWiki — Zen Browser
+2025-03-29 13:42:28.341 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:42:28.380 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, pacman/Tips and tricks - ArchWiki — Zen Browser
+2025-03-29 13:42:49.376 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, kitty
+2025-03-29 13:42:49.410 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:42:49.518 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, zsh
+2025-03-29 13:42:49.585 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:42:51.364 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, pacman -Qqd | pacman -Rsu --print -
+2025-03-29 13:42:51.668 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:42:58.536 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, pacman -Qqd | pacman -Rsu -
+2025-03-29 13:42:58.585 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:43:01.480 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, pacman -Qqd | pacman -Rsu 
+2025-03-29 13:43:01.497 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:43:07.100 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, sudo pacman -Qqd | sudo pacman -Rsu 
+2025-03-29 13:43:08.843 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:43:11.116 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, sudo pacman -Qqd | sudo pacman -Rsu -
+2025-03-29 13:43:12.971 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:43:35.338 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, yay -Qqd | yay -Rsu -
+2025-03-29 13:43:35.575 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:43:40.608 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, pacman/Tips and tricks - ArchWiki — Zen Browser
+2025-03-29 13:43:41.095 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:44:00.742 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, pacman/Tips and tricks - ArchWiki — Zen Browser
+2025-03-29 13:44:08.497 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window kitty, ~
+2025-03-29 13:44:09.051 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:44:09.073 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f340740
+2025-03-29 13:44:09.092 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, pacman/Tips and tricks - ArchWiki — Zen Browser
+2025-03-29 13:44:09.996 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, System maintenance - ArchWiki — Zen Browser
+2025-03-29 13:44:10.766 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, refreshrate.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:44:27.312 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, System maintenance - ArchWiki — Zen Browser
+2025-03-29 13:44:32.810 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, refreshrate.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:44:33.497 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, System maintenance - ArchWiki — Zen Browser
+2025-03-29 13:44:35.026 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Vladimir-csp/app2unit: Launches Desktop Entries as Systemd user units — Zen Browser
+2025-03-29 13:44:35.575 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Cómo usar tmux: cheat sheet con consejos útiles — Zen Browser
+2025-03-29 13:44:36.404 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, eww examples - Buscar con Google — Zen Browser
+2025-03-29 13:44:37.051 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:44:43.004 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, hyprfabricated/install.sh at main · tr1xem/hyprfabricated — Zen Browser
+2025-03-29 13:44:43.109 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, fram446742/hyprfabricated: A hackable shell for Hyprland
+2025-03-29 13:44:44.045 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:44:44.118 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, fram446742/hyprfabricated: A hackable shell for Hyprland
+2025-03-29 13:45:22.267 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, refreshrate.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:45:24.094 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:45:24.112 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f0d0560
+2025-03-29 13:45:24.130 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window , 
+2025-03-29 13:45:24.633 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, fram446742/hyprfabricated: A hackable shell for Hyprland
+2025-03-29 13:45:24.967 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window com.github.th_ch.youtube_music, YouTube Music
+2025-03-29 13:45:26.829 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:45:26.844 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f0c1f80
+2025-03-29 13:45:26.858 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window , 
+WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/fabric/utils/helpers.py:874: Warning: Source ID 184 was not found when attempting to remove it
+  return GLib.source_remove(handler_id)
+
+
+(main.py:176825): Gtk-CRITICAL **: 13:45:36.193: gtk_scrolled_window_set_min_content_width: assertion 'width == -1 || priv->max_content_width == -1 || width <= priv->max_content_width' failed
+2025-03-29 13:45:47.456 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window , 
+2025-03-29 13:45:47.755 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window gnome-connections, Conexiones
+2025-03-29 13:45:47.782 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:45:47.798 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window gnome-connections, gnome-connections
+2025-03-29 13:45:47.818 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:45:52.249 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:45:52.266 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35d7ec190
+2025-03-29 13:45:52.279 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window gnome-connections, Conexiones
+2025-03-29 13:45:53.140 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:45:53.155 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35d7b2eb0
+2025-03-29 13:45:53.168 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window , 
+2025-03-29 13:46:10.777 | INFO     | fabric.hyprland.widgets:on_urgent:289 - [Workspaces] workspace 1 is now urgent
+2025-03-29 13:46:10.779 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window Ferdium, Ferdium - Instagram
+2025-03-29 13:46:10.803 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:46:13.840 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window Ferdium, Ferdium - Bitwarden - vault.bitwarden.com
+2025-03-29 13:46:13.980 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window Ferdium, Ferdium - WhatsApp - web.whatsapp.com
+2025-03-29 13:46:14.166 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window Ferdium, Ferdium - Instagram - instagram.com
+2025-03-29 13:46:14.919 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window Ferdium, Ferdium - Instagram - instagram.com/?theme=dark
+2025-03-29 13:46:18.383 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window Ferdium, Ferdium - Instagram - Instagram
+2025-03-29 13:46:27.577 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window Ferdium, Ferdium - Instagram - (3) Bandeja de entrada • Chats
+2025-03-29 13:46:34.385 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:46:35.922 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:46:35.940 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35d7ec190
+2025-03-29 13:46:39.016 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:46:40.700 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:46:40.721 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f345a80
+2025-03-29 13:46:40.904 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, fram446742/hyprfabricated: A hackable shell for Hyprland
+2025-03-29 13:46:41.216 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window , 
+2025-03-29 13:46:42.024 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window Ferdium, Ferdium - Instagram - (3) Bandeja de entrada • Chats
+2025-03-29 13:46:42.488 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, fram446742/hyprfabricated: A hackable shell for Hyprland
+2025-03-29 13:46:42.943 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window Ferdium, Ferdium - Instagram - (3) Bandeja de entrada • Chats
+2025-03-29 13:46:43.286 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, fram446742/hyprfabricated: A hackable shell for Hyprland
+2025-03-29 13:46:43.888 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window Ferdium, Ferdium - Instagram - (3) Bandeja de entrada • Chats
+2025-03-29 13:46:52.226 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:46:52.401 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:46:52.421 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35d82d0b0
+2025-03-29 13:47:00.729 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:47:00.943 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f345a80
+2025-03-29 13:47:00.957 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:47:08.818 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:47:08.958 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:47:08.979 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f345a80
+2025-03-29 13:47:10.034 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:47:10.602 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:47:10.622 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f345a80
+2025-03-29 13:47:55.719 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, fram446742/hyprfabricated: A hackable shell for Hyprland
+2025-03-29 13:48:02.087 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:48:02.364 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, YouTube — Zen Browser
+2025-03-29 13:48:05.579 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:48:05.612 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, YouTube — Zen Browser
+2025-03-29 13:48:09.891 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, (37) YouTube — Zen Browser
+2025-03-29 13:48:14.905 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, Zen Browser
+2025-03-29 13:48:14.966 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window zen, YouTube — Zen Browser
+2025-03-29 13:48:18.829 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:48:18.849 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f339f90
+2025-03-29 13:48:18.867 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window , 
+2025-03-29 13:48:41.485 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window , 
+2025-03-29 13:48:46.399 | INFO     | services.brightness:screen_brightness:104 - [94mSet screen brightness to 72 (out of 255)
+2025-03-29 13:48:46.765 | INFO     | services.brightness:screen_brightness:104 - [94mSet screen brightness to 67 (out of 255)
+2025-03-29 13:48:47.014 | INFO     | services.brightness:screen_brightness:104 - [94mSet screen brightness to 62 (out of 255)
+2025-03-29 13:48:47.214 | INFO     | services.brightness:screen_brightness:104 - [94mSet screen brightness to 56 (out of 255)
+2025-03-29 13:48:50.130 | INFO     | services.brightness:screen_brightness:104 - [94mSet screen brightness to 51 (out of 255)
+2025-03-29 13:48:53.975 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window Ferdium, Ferdium - Instagram - (3) Bandeja de entrada • Chats
+2025-03-29 13:49:11.522 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35d7b2eb0
+2025-03-29 13:49:11.533 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:49:11.579 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window , 
+2025-03-29 13:49:17.995 | WARNING  | fabric.hyprland.widgets:on_urgent:280 - [Workspaces] received urgent signal, but data received (57e35f1bd0f0) is incorrect, skipping...
+2025-03-29 13:49:17.996 | WARNING  | fabric.hyprland.widgets:on_urgent:280 - [Workspaces] received urgent signal, but data received (57e35f1bd0f0) is incorrect, skipping...
+2025-03-29 13:49:18.198 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, Visual Studio Code
+2025-03-29 13:49:18.250 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:49:18.883 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, refreshrate.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:49:35.503 | WARNING  | fabric.hyprland.widgets:on_urgent:280 - [Workspaces] received urgent signal, but data received (57e35f338f80) is incorrect, skipping...
+2025-03-29 13:49:35.507 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, Visual Studio Code
+2025-03-29 13:49:35.531 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:49:35.745 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, refreshrate.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:49:35.913 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, Visual Studio Code
+2025-03-29 13:49:37.629 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f338f80
+2025-03-29 13:49:37.644 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:49:37.662 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, refreshrate.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:49:43.844 | WARNING  | fabric.hyprland.widgets:on_urgent:280 - [Workspaces] received urgent signal, but data received (57e35f338f80) is incorrect, skipping...
+2025-03-29 13:49:43.847 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, Visual Studio Code
+2025-03-29 13:49:43.873 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:49:44.195 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, refreshrate.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:49:44.430 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, Visual Studio Code
+2025-03-29 13:49:47.722 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:49:47.743 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f338f80
+2025-03-29 13:49:47.783 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, refreshrate.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:49:51.671 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, stderr.log (árbol de trabajo) (stderr.log) - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:49:55.785 | WARNING  | fabric.hyprland.widgets:on_urgent:280 - [Workspaces] received urgent signal, but data received (57e35f338f80) is incorrect, skipping...
+2025-03-29 13:49:55.787 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, Visual Studio Code
+2025-03-29 13:49:55.812 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:49:55.890 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, stderr.log (árbol de trabajo) (stderr.log) - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:49:56.807 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, Visual Studio Code
+2025-03-29 13:49:57.118 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, stderr.log (árbol de trabajo) (stderr.log) - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:49:57.217 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, Visual Studio Code
+2025-03-29 13:49:58.644 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f338f80
+2025-03-29 13:49:58.658 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:49:58.675 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, stderr.log (árbol de trabajo) (stderr.log) - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:50:00.895 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, refreshrate.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:50:08.710 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, ocr.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:50:10.038 | INFO     | fabric.hyprland.widgets:on_urgent:289 - [Workspaces] workspace 1 is now urgent
+2025-03-29 13:50:10.040 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, Visual Studio Code
+2025-03-29 13:50:10.053 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:50:15.455 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f338f80
+2025-03-29 13:50:15.468 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:50:15.483 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, ocr.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:50:21.751 | WARNING  | fabric.hyprland.widgets:on_urgent:280 - [Workspaces] received urgent signal, but data received (57e35f338f80) is incorrect, skipping...
+2025-03-29 13:50:21.753 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, Visual Studio Code
+2025-03-29 13:50:21.766 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:50:22.132 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, ocr.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:50:22.265 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, Visual Studio Code
+2025-03-29 13:50:24.026 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:50:24.048 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f338f80
+2025-03-29 13:50:24.065 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, ocr.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:50:29.470 | WARNING  | fabric.hyprland.widgets:on_urgent:280 - [Workspaces] received urgent signal, but data received (57e35f338f80) is incorrect, skipping...
+2025-03-29 13:50:29.471 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:50:29.492 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, Visual Studio Code
+2025-03-29 13:50:29.609 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, ocr.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:50:29.854 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, Visual Studio Code
+2025-03-29 13:50:30.781 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:50:30.799 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f338f80
