@@ -702,3 +702,20 @@ WARNING:py.warnings:/home/franc/.local/lib/python3.13/site-packages/fabric/utils
 2025-03-29 13:50:29.854 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, Visual Studio Code
 2025-03-29 13:50:30.781 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
 2025-03-29 13:50:30.799 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f338f80
+2025-03-29 13:50:30.816 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, ocr.sh - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:50:45.040 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, .gitignore - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:51:11.661 | WARNING  | fabric.hyprland.widgets:on_urgent:280 - [Workspaces] received urgent signal, but data received (57e35f338f80) is incorrect, skipping...
+2025-03-29 13:51:11.663 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:51:11.683 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, Visual Studio Code
+2025-03-29 13:51:11.768 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, .gitignore - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:51:12.061 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, Visual Studio Code
+2025-03-29 13:51:12.835 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f338f80
+2025-03-29 13:51:12.875 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:51:12.894 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, .gitignore - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:51:15.373 | INFO     | fabric.hyprland.widgets:on_urgent:289 - [Workspaces] workspace 1 is now urgent
+2025-03-29 13:51:15.374 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, Visual Studio Code
+2025-03-29 13:51:15.401 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :openwindow
+2025-03-29 13:51:15.630 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, .gitignore - Sin título (área de trabajo) - Python - Visual Studio Code
+2025-03-29 13:51:15.787 | INFO     | fabric.hyprland.widgets:on_activewindow:378 - [ActiveWindow] Activated window code, Visual Studio Code
+2025-03-29 13:51:16.441 | INFO     | modules.overview:do_update:388 - [Overview] Updating for :closewindow
+2025-03-29 13:51:16.464 | INFO     | fabric.hyprland.widgets:on_closewindow:369 - [ActiveWindow] Closed window 0x57e35f338f80
