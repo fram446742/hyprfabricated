@@ -11,26 +11,6 @@ mkdir -p "$SAVE_DIR"
 
 # If gpu-screen-recorder is already running, send SIGINT to stop it properly
 if pgrep -f "gpu-screen-recorder" >/dev/null; then
-<<<<<<< HEAD
-    pkill -SIGINT -f "gpu-screen-recorder"
-
-    # Wait a moment to ensure the recording has stopped and the file is ready
-    sleep 1
-
-    # Get the latest recorded file
-    LAST_VIDEO=$(ls -t "$SAVE_DIR"/*.mp4 2>/dev/null | head -n 1)
-
-    # Notification with actions: "View" opens the file, "Open folder" opens the folder
-    ACTION=$(notify-send -a "Hyprfabricated" "🟥 Recording Saved" \
-        -A "view=View" -A "open=Open folder")
-
-    if [ "$ACTION" = "view" ] && [ "$LAST_VIDEO" != "" ]; then
-        xdg-open "$LAST_VIDEO"
-    elif [ "$ACTION" = "open" ]; then
-        xdg-open "$SAVE_DIR"
-    fi
-    exit 0
-=======
   pkill -SIGINT -f "gpu-screen-recorder"
 
   # Espera un momento para asegurarse de que la grabación se haya detenido y el archivo esté listo
@@ -40,7 +20,7 @@ if pgrep -f "gpu-screen-recorder" >/dev/null; then
   LAST_VIDEO=$(ls -t "$SAVE_DIR"/*.mp4 2>/dev/null | head -n 1)
 
   # Notificación con acciones: "View" abre el archivo, "Open folder" abre la carpeta
-  ACTION=$(notify-send -a "Ax-Shell" "⬜ Recording stopped" \
+  ACTION=$(notify-send -a "Hyprfabricated" "⬜ Recording stopped" \
     -A "view=View" -A "open=Open folder")
 
   if [ "$ACTION" = "view" ] && [ -n "$LAST_VIDEO" ]; then
@@ -49,7 +29,6 @@ if pgrep -f "gpu-screen-recorder" >/dev/null; then
     xdg-open "$SAVE_DIR"
   fi
   exit 0
->>>>>>> 035347c4ea3a650f9d0447dd22f479f17404d948
 fi
 
 # Output file name for the new recording
