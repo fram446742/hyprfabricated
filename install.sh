@@ -43,6 +43,7 @@ PACKAGES=(
     ttf-jost
     unzip
     tmux
+    cliphist
 )
 
 PYTHON_PACKAGES=(

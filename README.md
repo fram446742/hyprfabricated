@@ -43,8 +43,6 @@ curl -fsSL https://raw.githubusercontent.com/tr1xem/hyprfabricated/main/install.
 ```
 
 ### Manual Installation
-1. Install dependencies:
-
 - Aur/Pacman:
   - [`Fabric`](https://github.com/Fabric-Development/fabric)
   - [`fabric-cli`](https://github.com/Fabric-Development/fabric-cli)
@@ -85,7 +83,7 @@ curl -fsSL https://raw.githubusercontent.com/tr1xem/hyprfabricated/main/install.
   - [Zed Sans](https://github.com/zed-industries/zed-fonts)
   - [Tabler Icons](https://tabler.io/icons)
 
-3. Download and run Ax-Shell:
+3. Download and run hyprfabricated:
    ```bash
    git clone https://github.com/tr1xem/hyprfabricated.git ~/.config/hyprfabricated
    uwsm -- app python ~/.config/hyprfabricated/main.py > /dev/null 2>&1 & disown
@@ -97,6 +95,7 @@ curl -fsSL https://raw.githubusercontent.com/tr1xem/hyprfabricated/main/install.
 - [x] Bluetooth Manager
 - [x] Calculator
 - [x] Calendar
+- [x] Clipboard Manager
 - [x] Color Picker
 - [x] Customizable UI
 - [x] Dashboard
@@ -121,7 +120,6 @@ curl -fsSL https://raw.githubusercontent.com/tr1xem/hyprfabricated/main/install.
 - [x] Vertical Layout
 - [x] Wallpaper Selector
 - [x] Workspaces Overview
-- [ ] Clipboard Manager
 - [ ] Multi-monitor support
 - [ ] Multimodal AI Assistant
 - [ ] Network Manager

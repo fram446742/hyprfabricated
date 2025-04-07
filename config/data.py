@@ -27,8 +27,8 @@ CURRENT_HEIGHT = screen.get_height()
 
 # Rename to match what's being imported in config.py
 WALLPAPERS_DIR_DEFAULT = get_relative_path("../assets/wallpapers_example")
-CONFIG_FILE = get_relative_path('../config.json')
-WAL_CONFIG = get_relative_path('../config/config.json')
+CONFIG_FILE = get_relative_path("../config.json")
+WAL_CONFIG = get_relative_path("../config/config.json")
 if os.path.exists(CONFIG_FILE) and os.path.exists(WAL_CONFIG):
     with open(WAL_CONFIG, "r") as f:
         configwal = json.load(f)
@@ -36,11 +36,17 @@ if os.path.exists(CONFIG_FILE) and os.path.exists(WAL_CONFIG):
         config = json.load(f)
     # DOCK_ICON_SIZE = config.get('dock_icon_size', 28)
     DOCK_ICON_SIZE = int(config.get("Dock", {}).get("dock_icon_size", 28))
-    WALLPAPERS_DIR = configwal.get('wallpapers_dir', WALLPAPERS_DIR_DEFAULT)
-    VERTICAL = config.get('vertical', False)  # Use saved value or False as default
-    DOCK_ALWAYS_OCCLUDED = config.get("Dock", {}).get("dock_always_occluded", False) # Load dock hover-only setting
-    TERMINAL_COMMAND = config.get('terminal_command', "ghostty -e")  # Load terminal command
-    CENTERED_BAR = config.get("Bar").get('minimal_vertical_bar')  # Load centered bar setting
+    WALLPAPERS_DIR = configwal.get("wallpapers_dir", WALLPAPERS_DIR_DEFAULT)
+    VERTICAL = config.get("vertical", False)  # Use saved value or False as default
+    DOCK_ALWAYS_OCCLUDED = config.get("Dock", {}).get(
+        "dock_always_occluded", False
+    )  # Load dock hover-only setting
+    TERMINAL_COMMAND = config.get(
+        "terminal_command", "ghostty -e"
+    )  # Load terminal command
+    CENTERED_BAR = config.get("Bar").get(
+        "minimal_vertical_bar"
+    )  # Load centered bar setting
     # DOCK_ENABLED = config.get('dock_enabled', True)  # Load dock visibility setting
     # DOCK_ICON_SIZE = config.get('dock_icon_size', 28)  # Load dock icon size setting
     #

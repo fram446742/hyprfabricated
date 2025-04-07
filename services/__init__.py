@@ -1,4 +1,4 @@
 """
-Ax-Shell services package.
+Hyprfabricated services package.
 Contains background services and utilities for the shell.
 """

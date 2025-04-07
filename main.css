@@ -21,6 +21,8 @@
 @import url("./styles/metrics.css");
 @import url("./styles/tools.css");
 @import url("./styles/systemprofiles.css");
+@import url("./styles/extras.css");
+
 * {
   all: unset;
   color: var(--foreground);

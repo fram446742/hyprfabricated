@@ -6,12 +6,17 @@ from fabric.widgets.centerbox import CenterBox
 from fabric.widgets.button import Button
 from fabric.widgets.revealer import Revealer
 from fabric.widgets.wayland import WaylandWindow as Window
-from fabric.hyprland.widgets import Workspaces, WorkspaceButton, Language, get_hyprland_connection
+from fabric.hyprland.widgets import (
+    Workspaces,
+    WorkspaceButton,
+    Language,
+    get_hyprland_connection,
+)
 from fabric.hyprland.service import HyprlandEvent
 from fabric.utils.helpers import get_relative_path, exec_shell_command_async
 import gi
-gi.require_version('Gtk', '3.0')
-import os
+
+gi.require_version("Gtk", "3.0")
 from gi.repository import Gdk
 from modules.systemtray import SystemTray
 import modules.icons as icons
@@ -28,7 +33,9 @@ class Bar(Window):
             name="bar",
             layer="top",
             anchor="left top right" if not data.VERTICAL else "top left bottom",
-            margin="-4px -4px -8px -4px" if not data.VERTICAL else "-4px -8px -4px -4px",
+            margin=(
+                "-4px -4px -8px -4px" if not data.VERTICAL else "-4px -8px -4px -4px"
+            ),
             exclusivity="auto",
             visible=True,
             all_visible=True,
@@ -57,23 +64,19 @@ class Bar(Window):
         self.button_tools = Button(
             name="button-bar",
             on_clicked=lambda *_: self.tools_menu(),
-            child=Label(
-                name="button-bar-label",
-                markup=icons.toolbox
-            )
+            child=Label(name="button-bar-label", markup=icons.toolbox),
         )
 
         self.connection = get_hyprland_connection()
 
-
-
         left_children = []
         self.lang_label = Label(name="lang-label")
-        self.language = Button(name="language", h_align="center", v_align="center", child=self.lang_label)
-        self.switch_on_start()
+        self.language = Button(
+            name="language", h_align="center", v_align="center", child=self.lang_label
+        )
+        self.on_language_switch()
         self.connection.connect("event::activelayout", self.on_language_switch)
-        # self.date_time = DateTime(name="date-time", formatters=["%I:%M%P"] if not data.VERTICAL else ["%I\n%M"], h_align="center" if not data.VERTICAL else "fill", v_align="center", h_expand=True, v_expand=True) # 12-hour format
-        self.date_time = DateTime(name="date-time", formatters=["%H:%M %P"] if not data.VERTICAL else ["%H\n%M"], h_align="center" if not data.VERTICAL else "fill", v_align="center", h_expand=True, v_expand=True) # 24-hour format
+        self.date_time = DateTime(name="date-time", formatters=["%I:%M%P"] if not data.VERTICAL else ["%I\n%M"], h_align="center" if not data.VERTICAL else "fill", v_align="center", h_expand=True, v_expand=True)
 
         self.button_overview = Button(
             name="button-bar",
@@ -92,11 +95,8 @@ class Bar(Window):
             self.button_apps.connect("leave_notify_event", self.on_button_leave)
             left_children.append(self.button_apps)
 
-
         if config["Bar"]["workspaces"]:
-            left_children.append(
-               self.ws_container
-            )
+            left_children.append(self.ws_container)
 
         start_children = []
 
@@ -122,7 +122,6 @@ class Bar(Window):
                 children=start_children if not data.VERTICAL else None,
             ),
         )
-
 
         self.boxed_revealer_left = Box(
             name="boxed-revealer",
@@ -243,28 +242,48 @@ class Bar(Window):
             self.v_all_children.extend(self.v_end_children)
 
         # Use centered layout when both vertical and centered_bar are enabled
-        is_centered_bar = data.VERTICAL and getattr(data, 'CENTERED_BAR', False)
+        is_centered_bar = data.VERTICAL and getattr(data, "CENTERED_BAR", False)
         self.bar_inner = CenterBox(
             name="bar-inner",
             orientation="h" if not data.VERTICAL else "v",
             h_align="fill",
             v_align="fill",
-            start_children=None if is_centered_bar else Box(
-                name="start-container",
-                spacing=4,
-                orientation="h" if not data.VERTICAL else "v",
-                children=left_children + [self.boxed_revealer_left] if not data.VERTICAL else self.v_start_children,
+            start_children=(
+                None
+                if is_centered_bar
+                else Box(
+                    name="start-container",
+                    spacing=4,
+                    orientation="h" if not data.VERTICAL else "v",
+                    children=(
+                        left_children + [self.boxed_revealer_left]
+                        if not data.VERTICAL
+                        else self.v_start_children
+                    ),
+                )
             ),
-            center_children=Box(
-                orientation="h" if not data.VERTICAL else "v",
-                spacing=4,
-                children=self.v_center_children if not is_centered_bar else self.minmal_children,
-            ) if data.VERTICAL else None,
-            end_children=None if is_centered_bar else Box(
-                name="end-container",
-                spacing=4,
-                orientation="h" if not data.VERTICAL else "v",
-                children=end_children if not data.VERTICAL else self.v_end_children,
+            center_children=(
+                Box(
+                    orientation="h" if not data.VERTICAL else "v",
+                    spacing=4,
+                    children=(
+                        self.v_center_children
+                        if not is_centered_bar
+                        else self.minmal_children
+                    ),
+                )
+                if data.VERTICAL
+                else None
+            ),
+            end_children=(
+                None
+                if is_centered_bar
+                else Box(
+                    name="end-container",
+                    spacing=4,
+                    orientation="h" if not data.VERTICAL else "v",
+                    children=end_children if not data.VERTICAL else self.v_end_children,
+                )
             ),
         )
 
@@ -275,7 +294,6 @@ class Bar(Window):
         self.show_all()
         if config["Bar"]["systray"]:
             self.systray._update_visibility()
-
 
     def on_button_enter(self, widget, event):
         window = widget.get_window()
@@ -302,18 +320,11 @@ class Bar(Window):
     def tools_menu(self):
         self.notch.open_notch("tools")
 
-    def on_language_switch(self, _, event: HyprlandEvent):
-        self.language.set_tooltip_text(Language().get_label())
+    def on_language_switch(self, _=None, event: HyprlandEvent = None):
+        lang = event.data[1] if event else Language().get_label()
+        self.language.set_tooltip_text(lang)
         if not data.VERTICAL:
-            self.lang_label.set_label(Language().get_label()[0:3].upper())
-        else:
-            self.lang_label.add_style_class("icon")
-            self.lang_label.set_markup(icons.keyboard)
-
-    def switch_on_start(self):
-        self.language.set_tooltip_text(Language().get_label())
-        if not data.VERTICAL:
-            self.lang_label.set_label(Language().get_label()[0:3].upper())
+            self.lang_label.set_label(lang[:3].upper())
         else:
             self.lang_label.add_style_class("icon")
             self.lang_label.set_markup(icons.keyboard)

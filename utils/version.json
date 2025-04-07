@@ -1,12 +1,10 @@
 {
-  "version": "2.3.1",
-  "changelog": [
-    "Vertical Mode Enhanced",
-    "Bug Fixes",
-    "Added a minimal mode for vertical mode",
-    "Dock working enhanced",
-    "Miscellaneous Enhancements",
-    "Tweaks and Fixes",
-    "Quick Fix for config"
-  ]
+	"version": "2.7.0",
+	"changelog": [
+		"Added Clipboard manager (have to regenrate config just open config and click on apply)",
+		"Language Bug fix",
+		"New Features added",
+		"Bug Fixes",
+		"Rest i forgor"
+	]
 }
