@@ -439,7 +439,8 @@ def create_widgets(config, widget_type):
                 DateTime(formatters=["%A, %d %B"], interval=10000, name="date")
             )
         if config.get("widgets_date_visible", True):
-            widgets.append(DateTime(formatters=["%I:%M"], name="clock"))
+            # widgets.append(DateTime(formatters=["%I:%M"], name="clock")) # 12 hour clock
+            widgets.append(DateTime(formatters=["%H:%M"], name="clock")) # 24 hour clock
         if config.get("widgets_quote_visible", True):
             widgets.append(qoute())
         if config.get("widgets_weatherwid_visible", True):
@@ -450,7 +451,8 @@ def create_widgets(config, widget_type):
                 DateTime(formatters=["%A. %d %B"], interval=10000, name="date")
             )
         if config.get("widgets_clock_visible", True):
-            widgets.append(DateTime(formatters=["%I:%M"], name="clock"))
+            # widgets.append(DateTime(formatters=["%I:%M"], name="clock")) # 12 hour clock
+            widgets.append(DateTime(formatters=["%H:%M"], name="clock")) # 24 hour clock
     return widgets
 
 

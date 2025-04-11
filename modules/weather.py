@@ -1,3 +1,4 @@
+import os
 import gi
 import urllib.parse
 import requests
@@ -13,6 +14,7 @@ from config.data import load_config
 
 config = load_config()
 
+WEATHER_CACHE_FILE = os.path.expanduser("~/.cache/.weather_cache")
 
 class Weather(Button):
     def __init__(self, **kwargs) -> None:
@@ -28,7 +30,9 @@ class Weather(Button):
         self.fetch_weather()
 
     def get_location(self):
-        """Fetch user's city using IP geolocation."""
+        """Fetch location from config file or IP API asynchronously."""
+        if city := config.get("city"):
+            return city
         try:
             response = self.session.get(
                 "https://ipinfo.io/json", timeout=5, stream=True
@@ -50,6 +54,35 @@ class Weather(Button):
     def fetch_weather(self):
         GLib.Thread.new("weather-fetch", self._fetch_weather_thread, None)
         return True
+    
+    def _write_cache(self, weather_data, tooltip_text=None):
+        """
+        Save weather data to a cache file in a human-readable and pretty format.
+        Expected format based on the tooltip:
+          Madrid: Partly cloudy +12°C (+11°C)
+          Humidity: 71% Wind: ↗14km/h
+        """
+        if tooltip_text is not None:
+            tooltip_parts = [part.strip() for part in tooltip_text.split(",")]
+            if len(tooltip_parts) >= 4:
+                # Replace the numeric temperature with weather_data that holds the icon
+                first_line = f"{tooltip_parts[0]} {weather_data} {tooltip_parts[1].split()[1]}"
+                second_line = f"{tooltip_parts[2]} {tooltip_parts[3]}"
+                cache_text = f"{first_line}\n{second_line}\n"
+            else:
+                # Fallback to splitting lines if tooltip format is unexpected
+                formatted_tooltip = "\n".join(tooltip_parts)
+                cache_text = f"{weather_data}\n{formatted_tooltip}\n"
+        else:
+            cache_text = f"{weather_data}\n"
+        
+        # Ensure the cache directory exists.
+        os.makedirs(os.path.dirname(WEATHER_CACHE_FILE), exist_ok=True)
+        try:
+            with open(WEATHER_CACHE_FILE, "w") as f:
+                f.write(cache_text)
+        except Exception as e:
+            print(f"Error writing weather cache: {e}")
 
     def _fetch_weather_thread(self, user_data):
         # Let wttr.in determine location based on IP

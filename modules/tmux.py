@@ -201,6 +201,10 @@ class TmuxManager(Box):
         if event.type == Gdk.EventType.DOUBLE_BUTTON_PRESS and event.button == 1:
             self.start_rename(button, session_name, label, entry)
             return True
+        # Handle middle-click to kill session
+        elif event.type == Gdk.EventType.BUTTON_PRESS and event.button == 2:
+            self.kill_session(session_name)
+            return True
         # Handle right click for context menu
         elif event.button == 3:
             menu = Gtk.Menu()

@@ -7,3 +7,7 @@ modules/tools.py
 #Testing
 config/dock.json
 config/dock.json.bak
+**/stdout.log
+**/stderr.log
+**/*.pyc
+**/__pycache__/

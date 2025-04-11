@@ -1,0 +1,63 @@
+{
+    "check_for_updates": true,
+    "city": "Madrid",
+    "Temprature_Unit": "C",
+    "quotetype": "stoic",
+    "terminal_command": "kitty",
+    "vertical": false,
+    "Basic": {
+        "corners": true,
+        "bar": true,
+        "widgets": true,
+        "dock": true
+    },
+    "Dock": {
+        "dock_icon_size": "30",
+        "dock_always_occluded": false
+    },
+    "Bar": {
+        "minimal_vertical_bar": true,
+        "systray": true,
+        "workspaces": true,
+        "buttonapps": true,
+        "buttontools": true,
+        "datetime": true,
+        "buttonpower": true,
+        "Barright": {
+            "metrics": true,
+            "controls": true,
+            "battery": true,
+            "systemprofiles": true,
+            "languageindicator": true
+        },
+        "Barleft": {
+            "weather": true,
+            "overview": true,
+            "networkapplet": true
+        }
+    },
+    "widgetstyle": "full",
+    "desktopwidgets": {
+        "activation": false,
+        "date": true,
+        "clock": true,
+        "quote": true,
+        "weather": true,
+        "systeminfo": false
+    },
+    "misc": {
+        "otherplayers": true
+    },
+    "tooltip": {
+        "Temprature_Unit_tooltip": "C for Celsius, F for Fahrenheit",
+        "quotetype_tooltip": "stoic for Stoic quotes, zen for Random quotes",
+        "city_tooltip": "Enter the city name for weather updates",
+        "widgetstyle_tooltip": "full for full widgets, basic for minimal widgets",
+        "bar_tooltip": "This hides Notch too as bar and notch are deeply integrated",
+        "otherplayers_tooltip": "This will enable other players like chromium and firefox",
+        "systemprofiles_tooltip": "Quick switching of powerprofiles (powerprofilesctl needed)",
+        "terminal_command_tooltip": "Examples: kitty -e, alacritty -e, foot -e",
+        "minimal_vertical_bar_tooltip": "Requires vertical bar to be enabled",
+        "dock_always_occluded_tooltip": "Dock will always be occulded by windows"
+    }
+}
