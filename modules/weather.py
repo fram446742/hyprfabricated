@@ -35,7 +35,7 @@ class Weather(Button):
 
     def get_location(self):
         """Fetch location from config file or IP API asynchronously."""
-        if city := config.get("city"):
+        if city := config.get("widgets_weather_location"):
             return city
         try:
             response = self.session.get(
