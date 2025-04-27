@@ -28,7 +28,7 @@ hyprconf = get_relative_path("config.json")
 def run_updater():
     try:
         subprocess.Popen(
-            f"uwsm app -- python {HOME_DIR}/.config/{APP_NAME_CAP}/modules/updater.py",
+            f"python {HOME_DIR}/.config/{APP_NAME_CAP}/modules/updater.py",
             shell=True,
             start_new_session=True,
         )

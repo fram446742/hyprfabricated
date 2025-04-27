@@ -60,7 +60,7 @@ if os.path.exists(CONFIG_FILE):
     )  # Load dock hover-only setting
     DOCK_ICON_SIZE = config.get("dock_icon_size", 28)  # Load dock icon size setting
     UPDATER = config.get("misc_updater", True)
-    OTHERPLAYERS = config.get("misc_otherplayers_visible", False)
+    OTHERPLAYERS = config.get("misc_otherplayers", False)
 
     DESKTOP_WIDGETS = config.get("bar_desktop_widgets_visible", True)
     WEATHER_FORMAT = config.get("widgets_weather_format", "C")
@@ -90,6 +90,14 @@ if os.path.exists(CONFIG_FILE):
         "weatherwid": config.get("widgets_weather_visible", True),
         "sysinfo": config.get("widgets_sysinfo_visible", True),
     }
+
+    BAR_METRICS_DISKS = config.get("bar_metrics_disks", ["/"])
+    METRICS_VISIBLE = config.get(
+        "metrics_visible", {"cpu": True, "ram": True, "disk": True, "gpu": True}
+    )
+    METRICS_SMALL_VISIBLE = config.get(
+        "metrics_small_visible", {"cpu": True, "ram": True, "disk": True, "gpu": True}
+    )
 else:
     WALLPAPERS_DIR = WALLPAPERS_DIR_DEFAULT
     VERTICAL = False  # Default value when no config exists
@@ -129,3 +137,7 @@ else:
         "sysinfo": True,
         "sysprofiles": False,
     }
+
+    BAR_METRICS_DISKS = ["/"]
+    METRICS_VISIBLE = {"cpu": True, "ram": True, "disk": True, "gpu": True}
+    METRICS_SMALL_VISIBLE = {"cpu": True, "ram": True, "disk": True, "gpu": True}

@@ -83,6 +83,7 @@ curl -fsSL https://raw.githubusercontent.com/tr1xem/hyprfabricated/main/install.
   - [`wlinhibit`](https://github.com/0x5a4/wlinhibit)
   - [`grimblast-git`](https://github.com/hyprwm/contrib/blob/main/grimblast/grimblast)
   - [`tmux`](https://github.com/tmux/tmux/wiki)
+  - [`webp-pixbuf-loader`]()
 - Python dependencies:
   - [ijson](https://pypi.org/project/ijson/)
   - [pillow](https://pypi.org/project/pillow/)
@@ -90,6 +91,7 @@ curl -fsSL https://raw.githubusercontent.com/tr1xem/hyprfabricated/main/install.
   - [requests](https://pypi.org/project/requests/)
   - [setproctitle](https://pypi.org/project/setproctitle/)
   - [toml](https://pypi.org/project/toml/)
+  - [numpy](https://numpy.org/)
   - [watchdog](https://pypi.org/project/watchdog/)
 - Fonts (automated on first run):
   - [Zed Sans](https://github.com/zed-industries/zed-fonts)

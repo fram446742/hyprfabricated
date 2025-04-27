@@ -133,6 +133,20 @@ DEFAULTS = {
     "misc_updater": True,
     "misc_otherplayers": False,
     "widgets_qoutetype": "stoic",
+    "bar_metrics_disks": ["/"],
+    # Add metric visibility defaults
+    "metrics_visible": {
+        "cpu": True,
+        "ram": True,
+        "disk": True,
+        "gpu": True,
+    },
+    "metrics_small_visible": {
+        "cpu": True,
+        "ram": True,
+        "disk": True,
+        "gpu": True,
+    },
 }
 
 bind_vars = DEFAULTS.copy()
@@ -276,15 +290,18 @@ def load_bind_vars():
                     if key in saved_vars:
                         bind_vars[key] = saved_vars[key]
                     else:
-                        bind_vars[key] = DEFAULTS[
-                            key
-                        ]  # Use default if missing in saved
-                # Add any new keys from DEFAULTS not present in saved_vars
-                for key in saved_vars:
-                    if key not in bind_vars:
-                        bind_vars[key] = saved_vars[
-                            key
-                        ]  # Keep saved if it's not in new defaults (less likely)
+                        bind_vars[key] = DEFAULTS[key]
+                # Ensure nested dicts for metric visibility
+                for vis_key in ["metrics_visible", "metrics_small_visible"]:
+                    if vis_key in DEFAULTS:
+                        if vis_key not in bind_vars or not isinstance(
+                            bind_vars[vis_key], dict
+                        ):
+                            bind_vars[vis_key] = DEFAULTS[vis_key].copy()
+                        else:
+                            for m in DEFAULTS[vis_key]:
+                                if m not in bind_vars[vis_key]:
+                                    bind_vars[vis_key][m] = DEFAULTS[vis_key][m]
         except json.JSONDecodeError:
             print(f"Warning: Could not decode JSON from {config_json}. Using defaults.")
             bind_vars.update(DEFAULTS)  # Ensure defaults on error
@@ -450,6 +467,7 @@ class HyprConfGUI(Window):
         self.system_tab_content = self.create_system_tab()
         self.widgets_tab_content = self.create_widgets_tab()
         self.misc_tab_content = self.create_misc_tab()
+        self.about_tab_content = self.create_about_tab()  # Add About tab
 
         self.tab_stack.add_titled(
             self.key_bindings_tab_content, "key_bindings", "Key Bindings"
@@ -460,6 +478,9 @@ class HyprConfGUI(Window):
         self.tab_stack.add_titled(self.system_tab_content, "system", "System")
         self.tab_stack.add_titled(self.widgets_tab_content, "widgets", "Widgets")
         self.tab_stack.add_titled(self.misc_tab_content, "misc", "Miscellaneous")
+        self.tab_stack.add_titled(
+            self.about_tab_content, "about", "About"
+        )  # Add About tab to stack
 
         # Use Gtk.StackSwitcher vertically on the left
         tab_switcher = Gtk.StackSwitcher()
@@ -1165,21 +1186,142 @@ class HyprConfGUI(Window):
             )
             system_grid.attach(note_label, 2, row, 2, 1)
 
-        # === SUPPORT INFO ===
-        support_box = Box(
-            orientation="h", spacing=10, style="margin-top: 15px;", h_align="start"
+        # --- System Metrics Options (moved from appearance tab) ---
+        metrics_header = Label(markup="<b>System Metrics Options</b>", h_align="start")
+        vbox.add(metrics_header)
+
+        # Metrics visibility toggles
+        metrics_grid = Gtk.Grid()
+        metrics_grid.set_column_spacing(15)
+        metrics_grid.set_row_spacing(8)
+        metrics_grid.set_margin_start(10)
+        metrics_grid.set_margin_top(5)
+        vbox.add(metrics_grid)
+
+        self.metrics_switches = {}
+        self.metrics_small_switches = {}
+
+        metric_names = {
+            "cpu": "CPU",
+            "ram": "RAM",
+            "disk": "Disk",
+            "gpu": "GPU",
+        }
+
+        # Normal metrics toggles
+        metrics_grid.attach(Label(label="Show in Metrics", h_align="start"), 0, 0, 1, 1)
+        for i, (key, label) in enumerate(metric_names.items()):
+            switch = Gtk.Switch()
+            switch.set_active(bind_vars.get("metrics_visible", {}).get(key, True))
+            self.metrics_switches[key] = switch
+            metrics_grid.attach(Label(label=label, h_align="start"), 0, i + 1, 1, 1)
+            metrics_grid.attach(switch, 1, i + 1, 1, 1)
+
+        # Small metrics toggles
+        metrics_grid.attach(
+            Label(label="Show in Small Metrics", h_align="start"), 2, 0, 1, 1
         )
-        support_icon = FabricImage(
-            icon_name="help-about-symbolic", icon_size=Gtk.IconSize.MENU
-        )
-        support_label = Label(
-            markup="<small>For help or to report issues, visit the <a href='https://github.com/tr1xem/hyprfabricated'>GitHub repository</a> or join the support <a href ='https://discord.gg/tRFxkbQ3Zq'>server</a></small>"
-        )
-        support_box.add(support_icon)
-        support_box.add(support_label)
-        vbox.add(support_box)
+        for i, (key, label) in enumerate(metric_names.items()):
+            switch = Gtk.Switch()
+            switch.set_active(bind_vars.get("metrics_small_visible", {}).get(key, True))
+            self.metrics_small_switches[key] = switch
+            metrics_grid.attach(Label(label=label, h_align="start"), 2, i + 1, 1, 1)
+            metrics_grid.attach(switch, 3, i + 1, 1, 1)
+
+        # Enforce minimum 3 enabled metrics
+        def enforce_minimum_metrics(switch_dict):
+            enabled = [k for k, s in switch_dict.items() if s.get_active()]
+            for k, s in switch_dict.items():
+                if len(enabled) <= 3 and s.get_active():
+                    s.set_sensitive(False)
+                else:
+                    s.set_sensitive(True)
+
+        def on_metric_toggle(switch, gparam, which):
+            enforce_minimum_metrics(self.metrics_switches)
+
+        def on_metric_small_toggle(switch, gparam, which):
+            enforce_minimum_metrics(self.metrics_small_switches)
+
+        for k, s in self.metrics_switches.items():
+            s.connect("notify::active", on_metric_toggle, k)
+        for k, s in self.metrics_small_switches.items():
+            s.connect("notify::active", on_metric_small_toggle, k)
+        enforce_minimum_metrics(self.metrics_switches)
+        enforce_minimum_metrics(self.metrics_small_switches)
+
+        # Disk directories
+        disks_label = Label(label="Disk directories", h_align="start", v_align="center")
+        vbox.add(disks_label)
+
+        self.disk_entries = Box(orientation="v", spacing=8, h_align="start")
+
+        def create_disk_edit(path):
+            bar = Box(orientation="h", spacing=10, h_align="start")
+            entry = Entry(text=path, h_expand=True)
+            bar.add(entry)
+            x = Button(label="X", on_clicked=lambda _: self.disk_entries.remove(bar))
+            bar.add(x)
+            self.disk_entries.add(bar)
+
+        vbox.add(self.disk_entries)
+        for path in bind_vars.get("bar_metrics_disks"):
+            create_disk_edit(path)
+        add_container = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        add_container.set_halign(Gtk.Align.START)
+        add_container.set_valign(Gtk.Align.CENTER)
+        add = Button(label="Add new disk", on_clicked=lambda _: create_disk_edit("/"))
+        add_container.add(add)
+        vbox.add(add_container)
 
         return scrolled_window
+
+    def create_about_tab(self):
+        """Create an About tab with project info, repo link, and Ko-Fi button."""
+        vbox = Box(orientation="v", spacing=18, style="margin: 30px;")
+        # Project title
+        vbox.add(
+            Label(
+                markup="<b>Hyprfabricated</b>",
+                h_align="start",
+                style="font-size: 1.5em; margin-bottom: 8px;",
+            )
+        )
+        # Description
+        vbox.add(
+            Label(
+                label="A hackable shell for Hyprland, powered by Fabric.",
+                h_align="start",
+                style="margin-bottom: 12px;",
+            )
+        )
+        # Repo link
+        repo_box = Box(orientation="h", spacing=6, h_align="start")
+        repo_label = Label(label="GitHub:", h_align="start")
+        repo_link = Label()
+        repo_link.set_markup(
+            '<a href="https://github.com/tr1xem/hyprfabricated">https://github.com/tr1xem/hyprfabricated</a>'
+        )
+        repo_box.add(repo_label)
+        repo_box.add(repo_link)
+        vbox.add(repo_box)
+
+        # Ko-Fi button
+        def on_kofi_clicked(_):
+            import webbrowser
+
+            webbrowser.open("https://discord.gg/EMWUTgegDm")
+
+        kofi_btn = Button(
+            label="Join Us on Discord",
+            on_clicked=on_kofi_clicked,
+            tooltip_text="Support Server",
+        )
+        kofi_btn.set_style("margin-top: 18px; min-width: 160px;")
+        vbox.add(kofi_btn)
+        # Spacer
+        vbox.add(Box(v_expand=True))
+        return vbox
 
     def on_vertical_changed(self, switch, gparam):
         """Callback for vertical switch."""
@@ -1275,6 +1417,19 @@ class HyprConfGUI(Window):
         # for component_name, switch in self.misc_switches.items():
         #     config_key = f"misc_{component_name}_visible"
         #     print(config_key, switch.get_active())
+        config_json = os.path.expanduser(f"~/.config/{APP_NAME_CAP}/config/config.json")
+        # Save metrics visibility
+        bind_vars["metrics_visible"] = {
+            k: s.get_active() for k, s in self.metrics_switches.items()
+        }
+        bind_vars["metrics_small_visible"] = {
+            k: s.get_active() for k, s in self.metrics_small_switches.items()
+        }
+
+        bind_vars["bar_metrics_disks"] = []
+        for entry in self.disk_entries.children:
+            bind_vars["bar_metrics_disks"].append(entry.children[0].get_text())
+
         config_json = os.path.expanduser(f"~/.config/{APP_NAME_CAP}/config/config.json")
         os.makedirs(os.path.dirname(config_json), exist_ok=True)
         try:
@@ -1402,6 +1557,25 @@ class HyprConfGUI(Window):
                 switch.set_active(bind_vars.get(config_key, True))
 
             self.corners_switch.set_active(bind_vars.get("corners_visible", True))
+
+            # Reset metrics visibility
+            for k, s in self.metrics_switches.items():
+                s.set_active(DEFAULTS["metrics_visible"][k])
+            for k, s in self.metrics_small_switches.items():
+                s.set_active(DEFAULTS["metrics_small_visible"][k])
+
+            # Reset disk entries
+            if True:
+                for i in self.disk_entries.children:
+                    self.disk_entries.remove(i)
+                bar = Box(orientation="h", spacing=10, h_align="start")
+                entry = Entry(text="/", h_expand=True)
+                bar.add(entry)
+                x = Button(
+                    label="X", on_clicked=lambda _: self.disk_entries.remove(bar)
+                )
+                bar.add(x)
+                self.disk_entries.add(bar)
 
             self.selected_face_icon = None
             self.face_status_label.label = ""
