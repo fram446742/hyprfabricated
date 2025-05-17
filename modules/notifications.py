@@ -17,6 +17,7 @@ from fabric.widgets.button import Button
 from fabric.widgets.centerbox import CenterBox
 from fabric.widgets.image import Image
 from fabric.widgets.label import Label
+from fabric.widgets.revealer import Revealer
 from fabric.widgets.scrolledwindow import ScrolledWindow
 import modules.icons as icons
 
@@ -1240,8 +1241,20 @@ class NotificationContainer(Box):
         self.navigation.add(self.prev_button)
         self.navigation.add(self.close_all_button)
         self.navigation.add(self.next_button)
+
+        # Create the Revealer for navigation buttons
+        self.navigation_revealer = Revealer(
+            transition_type="slide-down",
+            transition_duration=200,
+            child=self.navigation,
+            reveal_child=False,  # Initially hidden
+        )
+
         self.notification_box_container = Box(
-            orientation="v", spacing=4, children=[self.stack_box, self.navigation]
+            orientation="v",
+            spacing=4,
+            # Replace self.navigation with self.navigation_revealer
+            children=[self.stack_box, self.navigation_revealer],
         )
         self.notifications = []
         self.current_index = 0
@@ -1263,7 +1276,9 @@ class NotificationContainer(Box):
     def update_navigation_buttons(self):
         self.prev_button.set_sensitive(self.current_index > 0)
         self.next_button.set_sensitive(self.current_index < len(self.notifications) - 1)
-        self.navigation.set_visible(len(self.notifications) > 1)
+        # Control the revealer instead of the navigation box directly
+        should_reveal = len(self.notifications) > 1
+        self.navigation_revealer.set_reveal_child(should_reveal)
 
     def on_notification_closed(self, notification, reason):
         if self._is_destroying:
@@ -1336,7 +1351,8 @@ class NotificationContainer(Box):
                 child.destroy()
                 self.stack.remove(child)
             self.current_index = 0
-            self.navigation.set_visible(False)
+            # Hide the revealer when destroying
+            self.navigation_revealer.set_reveal_child(False)
             if self.notification_box_container.get_parent():
                 self.notification_box_container.get_parent().remove(
                     self.notification_box_container

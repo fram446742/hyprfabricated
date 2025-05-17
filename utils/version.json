@@ -1,6 +1,9 @@
 {
-	"version": "3.2.0",
+	"version": "3.3.0",
 	"changelog": [
-		"Many fixes and improvements"
+		"Many fixes and improvements",
+		"Added New Type of workspace indicator",
+		"Imporved Motions and smoothness",
+		"Bug fixes"
 	]
 }

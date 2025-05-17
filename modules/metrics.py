@@ -1,8 +1,10 @@
 import subprocess
 import json
+import logging
+import time
+from gi.repository import GLib
 
 import psutil
-from gi.repository import GLib
 
 from fabric.core.fabricator import Fabricator
 from fabric.widgets.box import Box
@@ -16,7 +18,10 @@ from fabric.widgets.scale import Scale
 import modules.icons as icons
 import config.data as data
 from services.network import NetworkClient
-import time
+
+# Setup logger
+logger = logging.getLogger(__name__)
+# logging.basicConfig(...) if needed
 
 
 class MetricsProvider:
@@ -34,26 +39,20 @@ class MetricsProvider:
         self.bat_percent = 0.0
         self.bat_charging = None
 
-        # Updates every 1 second
+        self._gpu_update_running = False
+
+        # Updates every 1 second (1000 milliseconds)
         GLib.timeout_add_seconds(1, self._update)
 
     def _update(self):
-        # Get non-blocking usage percentages (interval=0)
-        # The first call may return 0, but subsequent calls will provide consistent values.
         self.cpu = psutil.cpu_percent(interval=0)
         self.mem = psutil.virtual_memory().percent
         self.disk = [psutil.disk_usage(path).percent for path in data.BAR_METRICS_DISKS]
         self.gpubig = data.METRICS_VISIBLE["gpu"]
         self.gpusmall = data.METRICS_SMALL_VISIBLE["gpu"]
 
-        # Only get GPU info if the user has enabled it (fixes gpu wont going to sleep issue)
-        if self.gpubig or self.gpusmall:
-            info = self.get_gpu_info()
-            self.gpu = [
-                int(v["gpu_util"].strip("%")) if v["gpu_util"] is not None else 0
-                for v in info
-            ]
-
+        if (self.gpubig or self.gpusmall) and not self._gpu_update_running:
+            self._start_gpu_update_async()
         battery = psutil.sensors_battery()
         if battery is None:
             self.bat_percent = 0.0
@@ -62,7 +61,71 @@ class MetricsProvider:
             self.bat_percent = battery.percent
             self.bat_charging = battery.power_plugged
 
-        return True
+        return True  # keep the timeout
+
+    def _start_gpu_update_async(self):
+        """Starts a new GLib thread to run nvtop in the background."""
+        self._gpu_update_running = True
+        # GLib.Thread.new(name, func, data) starts the thread immediately
+        GLib.Thread.new("nvtop-thread", lambda _: self._run_nvtop_in_thread(), None)
+
+    def _run_nvtop_in_thread(self):
+        """Runs nvtop via subprocess in a separate GLib thread."""
+        output = None
+        error_message = None
+        try:
+            result = subprocess.check_output(["nvtop", "-s"], text=True, timeout=10)
+            output = result
+        except FileNotFoundError:
+            error_message = "nvtop command not found."
+            logger.warning(error_message)
+        except subprocess.CalledProcessError as e:
+            error_message = (
+                f"nvtop failed with exit code {e.returncode}: {e.stderr.strip()}"
+            )
+            logger.error(error_message)
+        except subprocess.TimeoutExpired:
+            error_message = "nvtop command timed out."
+            logger.error(error_message)
+        except Exception as e:
+            error_message = f"Unexpected error running nvtop: {e}"
+            logger.error(error_message)
+
+        GLib.idle_add(self._process_gpu_output, output, error_message)
+        self._gpu_update_running = False
+
+    def _process_gpu_output(self, output, error_message):
+        """Process nvtop JSON output on the main loop."""
+        try:
+            if error_message:
+                logger.error(f"GPU update failed: {error_message}")
+                self.gpu = []
+            elif output:
+                info = json.loads(output)
+                try:
+                    self.gpu = [
+                        (
+                            int(v["gpu_util"].strip("%"))
+                            if v["gpu_util"] is not None
+                            else 0
+                        )
+                        for v in info
+                    ]
+
+                except (KeyError, ValueError, TypeError) as e:
+                    logger.error(f"Failed parsing nvtop JSON: {e}")
+                    self.gpu = []
+            else:
+                logger.warning("nvtop returned no output.")
+                self.gpu = []
+        except json.JSONDecodeError as e:
+            logger.error(f"JSON decode error: {e}")
+            self.gpu = []
+        except Exception as e:
+            logger.error(f"Error processing nvtop output: {e}")
+            self.gpu = []
+
+        return False  # remove idle source
 
     def get_metrics(self):
         return (self.cpu, self.mem, self.disk, self.gpu)
@@ -72,12 +135,25 @@ class MetricsProvider:
 
     def get_gpu_info(self):
         try:
-            return json.loads(subprocess.check_output(["nvtop", "-s"]))
-        except:
+            result = subprocess.check_output(["nvtop", "-s"], text=True, timeout=5)
+            return json.loads(result)
+        except FileNotFoundError:
+            logger.warning("nvtop not found; GPU info unavailable.")
+            return []
+        except subprocess.CalledProcessError as e:
+            logger.error(f"nvtop init sync failed: {e}")
+            return []
+        except subprocess.TimeoutExpired:
+            logger.error("nvtop init call timed out.")
+            return []
+        except json.JSONDecodeError as e:
+            logger.error(f"Init JSON parse error: {e}")
+            return []
+        except Exception as e:
+            logger.error(f"Unexpected error during GPU init: {e}")
             return []
 
 
-# Global instance to share data between both widgets.
 shared_provider = MetricsProvider()
 
 
@@ -139,6 +215,7 @@ class Metrics(Box):
             if visible.get("disk", True)
             else []
         )
+        # Use the synchronous get_gpu_info here for initial count
         gpu_info = shared_provider.get_gpu_info()
         gpus = (
             [
@@ -188,19 +265,24 @@ class Metrics(Box):
         for x in self.scales:
             self.add(x)
 
+        # Update status periodically
         GLib.timeout_add_seconds(1, self.update_status)
 
     def update_status(self):
         cpu, mem, disks, gpus = shared_provider.get_metrics()
-        idx = 0
+        # idx = 0 # This variable is not used
         if self.cpu:
             self.cpu.usage.value = cpu / 100.0
         if self.ram:
             self.ram.usage.value = mem / 100.0
         for i, disk in enumerate(self.disk):
-            disk.usage.value = disks[i] / 100.0
+            # Ensure index is within bounds for disks list
+            if i < len(disks):
+                disk.usage.value = disks[i] / 100.0
         for i, gpu in enumerate(self.gpu):
-            gpu.usage.value = gpus[i] / 100.0
+            # Ensure index is within bounds for gpus list
+            if i < len(gpus):
+                gpu.usage.value = gpus[i] / 100.0
         return True
 
 
@@ -251,7 +333,7 @@ class MetricsSmall(Button):
 
         # Create the main box for metrics widgets
         main_box = Box(
-            name="metrics-small",
+            # name="metrics-small",
             spacing=0,
             orientation="h" if not data.VERTICAL else "v",
             visible=True,
@@ -275,6 +357,7 @@ class MetricsSmall(Button):
             if visible.get("disk", True)
             else []
         )
+        # Use the synchronous get_gpu_info here for initial count
         gpu_info = shared_provider.get_gpu_info()
         gpus = (
             [
@@ -321,8 +404,8 @@ class MetricsSmall(Button):
         self.connect("enter-notify-event", self.on_mouse_enter)
         self.connect("leave-notify-event", self.on_mouse_leave)
 
-        GLib.timeout_add_seconds(1, self.update_metrics)
         # Actualización de métricas cada segundo
+        GLib.timeout_add_seconds(1, self.update_metrics)
 
         # Estado inicial de los revealers y variables para la gestión del hover
         self.hide_timer = None
@@ -374,7 +457,7 @@ class MetricsSmall(Button):
 
     def update_metrics(self):
         cpu, mem, disks, gpus = shared_provider.get_metrics()
-        idx = 0
+        # idx = 0 # This variable is not used
         if self.cpu:
             self.cpu.circle.set_value(cpu / 100.0)
             self.cpu.level.set_label(self._format_percentage(int(cpu)))
@@ -382,11 +465,15 @@ class MetricsSmall(Button):
             self.ram.circle.set_value(mem / 100.0)
             self.ram.level.set_label(self._format_percentage(int(mem)))
         for i, disk in enumerate(self.disk):
-            disk.circle.set_value(disks[i] / 100.0)
-            disk.level.set_label(self._format_percentage(int(disks[i])))
+            # Ensure index is within bounds for disks list
+            if i < len(disks):
+                disk.circle.set_value(disks[i] / 100.0)
+                disk.level.set_label(self._format_percentage(int(disks[i])))
         for i, gpu in enumerate(self.gpu):
-            gpu.circle.set_value(gpus[i] / 100.0)
-            gpu.level.set_label(self._format_percentage(int(gpus[i])))
+            # Ensure index is within bounds for gpus list
+            if i < len(gpus):
+                gpu.circle.set_value(gpus[i] / 100.0)
+                gpu.level.set_label(self._format_percentage(int(gpus[i])))
 
         # Tooltip: only show enabled metrics
         tooltip_metrics = []
@@ -413,7 +500,7 @@ class Battery(Button):
 
         # Create the main box for metrics widgets
         main_box = Box(
-            name="metrics-small",
+            # name="metrics-small",
             spacing=0,
             orientation="h",
             visible=True,

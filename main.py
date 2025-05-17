@@ -14,7 +14,6 @@ from config.data import (
     UPDATER,
     DESKTOP_WIDGETS,
 )
-
 from modules.bar import Bar
 from modules.corners import Corners
 from modules.dock import Dock

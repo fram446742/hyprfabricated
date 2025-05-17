@@ -27,7 +27,11 @@ CURRENT_HEIGHT = screen.get_height()
 
 # Rename to match what's being imported in config.py
 WALLPAPERS_DIR_DEFAULT = get_relative_path("../assets/wallpapers_example")
-CONFIG_FILE = os.path.expanduser(f"~/.config/{APP_NAME_CAP}/config/config.json")
+CONFIG_FILE = get_relative_path("../config/config.json")
+MATUGEN_STATE_FILE = os.path.join(CONFIG_DIR, "matugen")
+
+# Default value for the new setting
+BAR_WORKSPACE_USE_CHINESE_NUMERALS = False
 
 
 def load_config():
@@ -66,6 +70,12 @@ if os.path.exists(CONFIG_FILE):
     WEATHER_FORMAT = config.get("widgets_weather_format", "C")
     WEATHER_LOCATION = config.get("widgets_weather_location", "")
     QUOTE_TYPE = config.get("widgets_quotetype", "stoic")
+    BAR_WORKSPACE_SHOW_NUMBER = config.get(
+        "bar_workspace_show_number", False
+    )  # Load workspace number visibility
+    BAR_WORKSPACE_USE_CHINESE_NUMERALS = config.get(
+        "bar_workspace_use_chinese_numerals", False
+    )  # Load Chinese numeral setting
     # Load bar component visibility settings
     BAR_COMPONENTS_VISIBILITY = {
         "button_apps": config.get("bar_button_apps_visible", True),
@@ -113,6 +123,9 @@ else:
     WEATHER_LOCATION = ""
 
     QUOTE_TYPE = "stoic"
+    BAR_WORKSPACE_SHOW_NUMBER = False  # Default workspace number visibility
+    BAR_WORKSPACE_USE_CHINESE_NUMERALS = False  # Default Chinese numeral setting
+
     # Default values for component visibility (all visible)
     BAR_COMPONENTS_VISIBILITY = {
         "button_apps": True,

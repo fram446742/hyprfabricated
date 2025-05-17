@@ -24,6 +24,7 @@ PACKAGES=(
     hyprsunset-git
     imagemagick
     libnotify
+    hyprshot
     matugen-bin
     noto-fonts-emoji
     playerctl
@@ -115,6 +116,12 @@ $aur_helper -Syy --needed --devel --noconfirm "${PACKAGES[@]}" || true
 
 echo "Installing gray-git..."
 yes | $aur_helper -Syy --needed --devel --noconfirm gray-git || true
+
+# Downgrade python-gobject to 3.50.0-2 (Temporary fix)
+if [ "$(pacman -Q python-gobject | awk '{print $2}')" != "3.50.0-2" ]; then
+    echo "Downgrading python-gobject to 3.50.0-2..."
+    sudo pacman -U --noconfirm https://archive.archlinux.org/packages/p/python-gobject/python-gobject-3.50.0-2-x86_64.pkg.tar.zst
+fi
 
 echo "Installing required fonts..."
 
