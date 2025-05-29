@@ -1404,7 +1404,7 @@ class NotificationPopup(Window):
         if (
             data.BAR_POSITION in ["Top", "Bottom"]
             and data.PANEL_POSITION == "End"
-            and data.NOTIF_POS == data.BAR_POSITION
+            or x_pos == data.BAR_POSITION.lower()
         ):
             x_pos = "left"
 

@@ -157,7 +157,11 @@ class Dock(Window):
         self._prevent_occlusion = False
 
         self.view = Box(name="viewport", spacing=4)
-        self.wrapper = Box(name="dock", children=[self.view])
+        self.wrapper = Box(
+            name="dock",
+            children=[self.view],
+            style_classes=["left"] if data.BAR_POSITION == "Right" else [],
+        )
 
         self.wrapper.set_orientation(dock_wrapper_orientation_val)
         self.view.set_orientation(dock_wrapper_orientation_val)
@@ -227,7 +231,7 @@ class Dock(Window):
                         v_align="start",
                         children=[
                             Box(h_expand=True, h_align="fill"),
-                            MyCorner("top-left"),
+                            MyCorner("bottom-right"),
                         ],
                     )
                     self.corner_bottom = Box(
@@ -236,7 +240,7 @@ class Dock(Window):
                         v_align="end",
                         children=[
                             Box(h_expand=True, h_align="fill"),
-                            MyCorner("bottom-left"),
+                            MyCorner("top-right"),
                         ],
                     )
                 else:
@@ -245,8 +249,8 @@ class Dock(Window):
                         orientation=Gtk.Orientation.HORIZONTAL,
                         v_align="start",
                         children=[
+                            MyCorner("bottom-left"),
                             Box(h_expand=True, h_align="fill"),
-                            MyCorner("top-right"),
                         ],
                     )
                     self.corner_bottom = Box(
@@ -254,8 +258,8 @@ class Dock(Window):
                         orientation=Gtk.Orientation.HORIZONTAL,
                         v_align="end",
                         children=[
+                            MyCorner("top-left"),
                             Box(h_expand=True, h_align="fill"),
-                            MyCorner("bottom-right"),
                         ],
                     )
 
@@ -286,7 +290,11 @@ class Dock(Window):
 
             self.main_box = Box(
                 orientation=main_box_orientation_val,
-                children=[self.hover_activator, self.dock_revealer],
+                children=(
+                    [self.hover_activator, self.dock_revealer]
+                    if data.BAR_POSITION != "Right"
+                    else [self.dock_revealer, self.hover_activator]
+                ),
                 h_align=main_box_h_align_val,
             )
             self.add(self.main_box)
