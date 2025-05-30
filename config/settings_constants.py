@@ -1,14 +1,12 @@
-import os
-
 from .data import (
     APP_NAME,
-    APP_NAME_CAP,  # Añadir APP_NAME
-    WALLPAPERS_DIR_DEFAULT,
-    PANEL_POSITION_KEY,
-    PANEL_POSITION_DEFAULT,
-    NOTIF_POS_KEY,
+    APP_NAME_CAP,
     NOTIF_POS_DEFAULT,
-)  # Importar las nuevas constantes
+    NOTIF_POS_KEY,
+    PANEL_POSITION_DEFAULT,
+    PANEL_POSITION_KEY,
+    WALLPAPERS_DIR_DEFAULT,
+)
 
 SOURCE_STRING = f"""
 # {APP_NAME_CAP}
@@ -45,6 +43,10 @@ DEFAULTS = {
     "prefix_power": "SUPER",
     "suffix_power": "ESCAPE",
     "prefix_toggle": "SUPER CTRL",
+    "prefix_randwall": "SUPER SHIFT",
+    "suffix_randwall": "COMMA",
+    "prefix_caffeine": "SUPER SHIFT",
+    "suffix_caffeine": "M",
     "suffix_toggle": "B",
     "prefix_css": "SUPER SHIFT",
     "suffix_css": "B",

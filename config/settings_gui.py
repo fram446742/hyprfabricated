@@ -149,7 +149,9 @@ class HyprConfGUI(Window):
             ("Emoji Picker", "prefix_emoji", "suffix_emoji"),
             ("Power Menu", "prefix_power", "suffix_power"),
             ("Reload CSS", "prefix_css", "suffix_css"),
+            ("Random Wallpaper", "prefix_randwall", "suffix_randwall"),
             ("Reload CSS", "prefix_css", "suffix_css"),
+            ("Toggle Caffeine", "prefix_caffeine", "suffix_caffeine"),
             ("Open config", "prefix_config", "suffix_config"),
             (
                 "Restart with inspector",
