@@ -93,7 +93,6 @@ curl -fsSL https://raw.githubusercontent.com/tr1xem/hyprfabricated/main/install.
   - [requests](https://pypi.org/project/requests/)
   - [setproctitle](https://pypi.org/project/setproctitle/)
   - [toml](https://pypi.org/project/toml/)
-  - [currencyconverter]()
   - [pywayland]()
   - [numpy](https://numpy.org/)
   - [watchdog](https://pypi.org/project/watchdog/)

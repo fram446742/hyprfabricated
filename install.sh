@@ -46,7 +46,6 @@ PACKAGES=(
     cliphist
     webp-pixbuf-loader
     nvtop
-    python-currencyconverter
     python-pywayland
     vte3
 )
