@@ -1,3 +1,4 @@
+from gi.repository import Gdk, GObject, Gtk
 import re
 from collections.abc import Iterable
 from enum import Enum
@@ -11,7 +12,6 @@ from fabric.widgets.window import Window
 from loguru import logger
 
 gi.require_version("Gtk", "3.0")
-from gi.repository import Gdk, GObject, Gtk
 
 try:
     gi.require_version("GtkLayerShell", "0.1")
@@ -27,6 +27,7 @@ class WaylandWindowExclusivity(Enum):
     NORMAL = 2
     AUTO = 3
 
+
 class Layer(GObject.GEnum):
     BACKGROUND = 0
     BOTTOM = 1
@@ -34,11 +35,13 @@ class Layer(GObject.GEnum):
     OVERLAY = 3
     ENTRY_NUMBER = 4
 
+
 class KeyboardMode(GObject.GEnum):
     NONE = 0
     EXCLUSIVE = 1
     ON_DEMAND = 2
     ENTRY_NUMBER = 3
+
 
 class Edge(GObject.GEnum):
     LEFT = 0
@@ -46,6 +49,7 @@ class Edge(GObject.GEnum):
     TOP = 2
     BOTTOM = 3
     ENTRY_NUMBER = 4
+
 
 class WaylandWindow(Window):
     @Property(
@@ -61,9 +65,7 @@ class WaylandWindow(Window):
         self,
         value: Literal["background", "bottom", "top", "overlay"] | Layer,
     ) -> None:
-        self._layer = get_enum_member(
-            Layer, value, default=Layer.TOP
-        )
+        self._layer = get_enum_member(Layer, value, default=Layer.TOP)
         return GtkLayerShell.set_layer(self, self._layer)
 
     @Property(int, "read-write")
@@ -221,8 +223,7 @@ class WaylandWindow(Window):
 
     def __init__(
         self,
-        layer: Literal["background", "bottom", "top", "overlay"]
-        | Layer = Layer.TOP,
+        layer: Literal["background", "bottom", "top", "overlay"] | Layer = Layer.TOP,
         anchor: str = "",
         margin: str | Iterable[int] = "0px 0px 0px 0px",
         exclusivity: Literal["auto", "normal", "none"]
@@ -254,21 +255,21 @@ class WaylandWindow(Window):
     ):
         Window.__init__(
             self,
-            title,
-            type,
-            child,
-            name,
-            False,
-            False,
-            style,
-            style_classes,
-            tooltip_text,
-            tooltip_markup,
-            h_align,
-            v_align,
-            h_expand,
-            v_expand,
-            size,
+            title=title,
+            type=type,
+            child=child,
+            name=name,
+            visible=False,
+            all_visible=False,
+            style=style,
+            style_classes=style_classes,
+            tooltip_text=tooltip_text,
+            tooltip_markup=tooltip_markup,
+            h_align=h_align,
+            v_align=v_align,
+            h_expand=h_expand,
+            v_expand=v_expand,
+            size=size,
             **kwargs,
         )
         self._layer = Layer.ENTRY_NUMBER

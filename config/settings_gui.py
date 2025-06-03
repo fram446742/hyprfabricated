@@ -17,7 +17,7 @@ from fabric.widgets.label import Label
 from fabric.widgets.scale import Scale
 from fabric.widgets.scrolledwindow import ScrolledWindow
 from fabric.widgets.stack import Stack
-from fabric.widgets.window import Window
+from widgets.wayland import WaylandWindow as Window
 from gi.repository import GdkPixbuf, GLib, Gtk
 from PIL import Image
 

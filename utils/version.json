@@ -1,5 +1,5 @@
 {
-	"version": "4.2.5",
+	"version": "4.3.0",
 	"changelog": [
 		"<b>feat:</b> Clicking outside the notch closes it! (<a href='https://github.com/Axenide/Ax-Shell/pull/154'>#154</a>)",
 		"<b>feat:</b> Unit and currency conversion (<a href='https://github.com/Axenide/Ax-Shell/pull/122'>#122</a>)",
@@ -7,6 +7,7 @@
 		"<b>qol:</b> Kanban auto-scroll on add (<a href='https://github.com/Axenide/Ax-Shell/pull/118'>#118</a>)",
 		"<b>fix:</b> Clipboard manager UTF-8 encoding (<a href='https://github.com/Axenide/Ax-Shell/pull/143'>#143</a>)",
 		"<b>patch:</b> Enums for PyGObject >=3.51.0 NO MORE DOWNGRADING!!! (Thanks to <a href='https://github.com/FakeMichau'>@FakeMichau</a>!)",
-		"<b>chore:</b> Herobrine, Plasma-browser-integration removed."
+		"<b>patch:</b> Patch fixed lol (<a href='https://github.com/Axenide/Ax-Shell/pull/157'>#157</a>)",
+		"Herobrine,Plasma-integration removed."
 	]
 }
