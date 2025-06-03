@@ -93,6 +93,8 @@ curl -fsSL https://raw.githubusercontent.com/tr1xem/hyprfabricated/main/install.
   - [requests](https://pypi.org/project/requests/)
   - [setproctitle](https://pypi.org/project/setproctitle/)
   - [toml](https://pypi.org/project/toml/)
+  - [currencyconverter]()
+  - [pywayland]()
   - [numpy](https://numpy.org/)
   - [watchdog](https://pypi.org/project/watchdog/)
 - Fonts (automated on first run):
@@ -118,6 +120,7 @@ curl -fsSL https://raw.githubusercontent.com/tr1xem/hyprfabricated/main/install.
 - [x] Dock
 - [x] Emoji Picker
 - [x] Kanban Board
+- [x] Network Manager
 - [x] Notifications
 - [x] OCR
 - [x] Full Gui Config
@@ -132,12 +135,13 @@ curl -fsSL https://raw.githubusercontent.com/tr1xem/hyprfabricated/main/install.
 - [x] System Tray
 - [x] Terminal
 - [x] Tmux Session Manager
+- [x] Update checker
 - [x] Vertical Layout
 - [x] Wallpaper Selector
 - [x] Workspaces Overview
 - [ ] Multi-monitor support
 - [ ] Multimodal AI Assistant
-- [ ] Network Manager
+- [ ] OSD
 - [ ] OTP Manager
 
 # Contibutors

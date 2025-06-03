@@ -12,7 +12,6 @@ from fabric.widgets.image import Image
 from fabric.widgets.label import Label
 from fabric.widgets.revealer import Revealer
 from fabric.widgets.scrolledwindow import ScrolledWindow
-from fabric.widgets.wayland import WaylandWindow as Window
 from gi.repository import GdkPixbuf, GLib, Gtk
 from loguru import logger
 from fabric.utils.helpers import get_relative_path
@@ -20,6 +19,7 @@ from fabric.utils.helpers import get_relative_path
 import config.data as data
 import modules.icons as icons
 from widgets.rounded_image import CustomImage
+from widgets.wayland import WaylandWindow as Window
 
 PERSISTENT_DIR = f"/tmp/{data.APP_NAME}/notifications"
 PERSISTENT_HISTORY_FILE = os.path.join(PERSISTENT_DIR, "notification_history.json")

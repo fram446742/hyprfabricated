@@ -15,7 +15,6 @@ from fabric.widgets.centerbox import CenterBox
 from fabric.widgets.datetime import DateTime
 from fabric.widgets.label import Label
 from fabric.widgets.revealer import Revealer
-from fabric.widgets.wayland import WaylandWindow as Window
 from gi.repository import Gdk, Gtk
 
 import config.data as data
@@ -26,7 +25,7 @@ from modules.metrics import Battery, MetricsSmall, NetworkApplet
 from modules.systemtray import SystemTray
 from modules.weather import Weather
 from modules.systemprofiles import Systemprofiles
-
+from widgets.wayland import WaylandWindow as Window
 
 CHINESE_NUMERALS = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "〇"]
 

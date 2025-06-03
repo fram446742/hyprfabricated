@@ -8,42 +8,35 @@ from config.data import (
     APP_NAME_CAP,
     CACHE_DIR,
     CONFIG_FILE,
-    DOCK_ICON_SIZE,
     HOME_DIR,
-    VERTICAL,
     UPDATER,
     DESKTOP_WIDGETS,
 )
+
+import gi
+
+gi.require_version("GLib", "2.0")
+import setproctitle
+from fabric import Application
+from fabric.utils import exec_shell_command_async, get_relative_path
+from gi.repository import GLib
+
 from modules.bar import Bar
 from modules.corners import Corners
 from modules.dock import Dock
 from modules.notch import Notch
 from modules.deskwidgets import Deskwidgets
 from modules.notifications import NotificationPopup
+from modules.updater import run_updater
 
 fonts_updated_file = f"{CACHE_DIR}/fonts_updated"
 hyprconf = get_relative_path("config.json")
-
-
-def run_updater():
-    try:
-        subprocess.Popen(
-            f"python {HOME_DIR}/.config/{APP_NAME_CAP}/modules/updater.py",
-            shell=True,
-            start_new_session=True,
-        )
-        print("Updater process restarted.")
-    except Exception as e:
-        print(f"Error restarting Updater process: {e}")
 
 
 if __name__ == "__main__":
     setproctitle.setproctitle(APP_NAME)
 
     if not os.path.isfile(CONFIG_FILE):
-        # Corregir la ruta a config.py.
-        # get_relative_path('config/config.py') asume que 'config' es un subdirectorio
-        # del directorio donde está main.py (la raíz del proyecto).
         config_script_path = get_relative_path("config/config.py")
         exec_shell_command_async(f"python {config_script_path}")
 
@@ -60,7 +53,9 @@ if __name__ == "__main__":
     config = load_config()
 
     if UPDATER:
-        run_updater()
+        GLib.idle_add(run_updater)
+        # Every hour
+        GLib.timeout_add(3600000, run_updater)
 
     corners = Corners()
     bar = Bar()

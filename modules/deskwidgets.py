@@ -4,7 +4,7 @@ from fabric.widgets.label import Label
 from fabric.widgets.overlay import Overlay
 from fabric.widgets.datetime import DateTime
 from fabric.widgets.circularprogressbar import CircularProgressBar
-from fabric.widgets.wayland import WaylandWindow as Window
+from widgets.wayland import WaylandWindow as Window
 from fabric.utils import invoke_repeater
 import requests
 import urllib.parse
