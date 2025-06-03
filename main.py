@@ -1,8 +1,11 @@
 import os
-import subprocess
 import setproctitle
 from fabric import Application
 from fabric.utils import exec_shell_command_async, get_relative_path
+import gi
+
+gi.require_version("GLib", "2.0")
+from gi.repository import GLib
 from config.data import (
     APP_NAME,
     APP_NAME_CAP,
@@ -13,13 +16,6 @@ from config.data import (
     DESKTOP_WIDGETS,
 )
 
-import gi
-
-gi.require_version("GLib", "2.0")
-import setproctitle
-from fabric import Application
-from fabric.utils import exec_shell_command_async, get_relative_path
-from gi.repository import GLib
 
 from modules.bar import Bar
 from modules.corners import Corners
