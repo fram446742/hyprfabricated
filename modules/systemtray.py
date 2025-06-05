@@ -49,7 +49,6 @@ class SystemTray(Gtk.Box):
             "button-press-event",
             lambda button, event: self.on_button_click(button, item, event),
         )
-
         pixmap = Gray.get_pixmap_for_pixmaps(item.get_icon_pixmaps(), self.pixel_size)
 
         try:

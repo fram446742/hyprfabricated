@@ -17,7 +17,7 @@ from fabric.widgets.label import Label
 from fabric.widgets.scale import Scale
 from fabric.widgets.scrolledwindow import ScrolledWindow
 from fabric.widgets.stack import Stack
-from widgets.wayland import WaylandWindow as Window
+from fabric.widgets.window import Window
 from gi.repository import GdkPixbuf, GLib, Gtk
 from PIL import Image
 
@@ -171,7 +171,6 @@ class HyprConfGUI(Window):
             suffix_entry = Entry(text=bind_vars.get(suffix_key, ""))
             keybind_grid.attach(suffix_entry, 3, row, 1, 1)
             self.entries.append((prefix_key, suffix_key, prefix_entry, suffix_entry))
-
         main_vbox.add(keybind_grid)
         return scrolled_window
 
@@ -977,7 +976,7 @@ class HyprConfGUI(Window):
         vbox = Box(orientation="v", spacing=18, style="margin: 30px;")
         vbox.add(
             Label(
-                markup=f"<b>{APP_NAME_CAP}</b>",
+                markup=f"<b>Hyprfabricated</b>",
                 h_align="start",
                 style="font-size: 1.5em; margin-bottom: 8px;",
             )
