@@ -1,5 +1,5 @@
 {
-	"version": "4.1.0",
+	"version": "4.5.0",
 	"changelog": [
 		"<b>feat:</b> Implemented upower for more robust battery data and future power management. (<a href='https://github.com/Axenide/Ax-Shell/pull/156'>#156</a>)",
 		"<b>tweak:</b> Moved version file to root directory for easier access.",
