@@ -24,7 +24,7 @@ import config.data as data
 # File locations
 VERSION_FILE = get_relative_path("../utils/version.json")
 REMOTE_VERSION_FILE = "/tmp/remote_version.json"
-REMOTE_URL = "https://raw.githubusercontent.com/tr1xem/hyprfabricated/refs/heads/main/utils/version.json"
+REMOTE_URL = "https://raw.githubusercontent.com/tr1xem/hyprfabricated/refs/heads/main/version.json"
 REPO_DIR = get_relative_path("../")
 
 SNOOZE_FILE_NAME = "updater_snooze.txt"
@@ -191,7 +191,9 @@ class UpdateWindow(Gtk.Window):
         self.changelog_label = Gtk.Label()
         self.changelog_label.set_xalign(0)
         self.changelog_label.set_yalign(0)
-        self.changelog_label.set_line_wrap(Gtk.WrapMode.WORD_CHAR)
+        self.changelog_label.set_line_wrap(
+            Gtk.WrapMode.WORD_CHAR
+        )  # Gtk.WrapMode instead of just True
         self.changelog_label.set_selectable(False)
         self.changelog_label.set_markup(joined)
 
@@ -346,6 +348,9 @@ class UpdateWindow(Gtk.Window):
         Closes the window and relaunches the application.
         """
         self.destroy()
+        # Relaunch logic would typically be here if not handled by an external script
+        # For now, it just closes. A real restart might involve:
+        # os.execv(sys.executable, [sys.executable] + sys.argv)
         return False  # So the timeout runs only once
 
     def handle_update_failure(self, error_message):
@@ -391,10 +396,12 @@ class UpdateWindow(Gtk.Window):
             Gtk.main_quit()
 
 
-def _initiate_update_check_flow(is_standalone_mode):
+def _initiate_update_check_flow(
+    is_standalone_mode, force=False
+):  # Added force argument with default
     """
     Logic that checks connection, snooze, and downloads the remote version.
-    If there's a new version, launches the update window.
+    If there's a new version or force is True, launches the update window.
     """
     global _QUIT_GTK_IF_NO_WINDOW_STANDALONE
 
@@ -404,6 +411,23 @@ def _initiate_update_check_flow(is_standalone_mode):
             GLib.idle_add(Gtk.main_quit)
         return
 
+    fetch_remote_version()
+    latest_version, changelog, _ = get_remote_version()
+
+    if force:
+        print(
+            f"Force update mode enabled. Opening updater for version {latest_version}."
+        )
+        if latest_version == "0.0.0" and not changelog:
+            print(
+                f"Warning: Could not fetch remote version details for {data.APP_NAME_CAP}. Updater will show default/empty info."
+            )
+        GLib.idle_add(
+            launch_update_window, latest_version, changelog, is_standalone_mode
+        )
+        return  # Exit after launching in force mode
+
+    # --- Regular update check flow (if not forced) ---
     snooze_file_path = get_snooze_file_path()
     if os.path.exists(snooze_file_path):
         try:
@@ -437,14 +461,11 @@ def _initiate_update_check_flow(is_standalone_mode):
                 f"Error processing snooze file {snooze_file_path}: {e_snooze}. Proceeding with check."
             )
             try:
-                os.remove(snooze_file_path)
+                os.remove(snooze_file_path)  # Attempt to remove problematic snooze file
             except OSError as e_remove_generic:
                 print(f"Error removing problematic snooze file: {e_remove_generic}")
 
-    fetch_remote_version()
-
     current_version, _ = get_local_version()
-    latest_version, changelog, _ = get_remote_version()
 
     # Basic version comparison (not strict semver)
     if latest_version > current_version and latest_version != "0.0.0":
@@ -470,22 +491,29 @@ def launch_update_window(latest_version, changelog, is_standalone_mode):
 def check_for_updates():
     """
     Public function for module: starts the update check in a background thread.
+    This will run with force=False by default.
     """
+    # _initiate_update_check_flow's 'force' parameter defaults to False,
+    # so passing args=(False,) correctly sets is_standalone_mode=False and force=False.
     thread = threading.Thread(
         target=_initiate_update_check_flow, args=(False,), daemon=True
     )
     thread.start()
 
 
-def run_updater():
+def run_updater(force=False):  # Modified to accept force argument
     """
     Standalone entry point: starts Gtk.main and the update check.
+    Args:
+        force (bool): If True, opens the updater even if the version isn't outdated or snoozed.
+                      Defaults to False.
     """
     global _QUIT_GTK_IF_NO_WINDOW_STANDALONE
     _QUIT_GTK_IF_NO_WINDOW_STANDALONE = True
 
+    # Pass the force argument to the target function
     update_check_thread = threading.Thread(
-        target=_initiate_update_check_flow, args=(True,), daemon=True
+        target=_initiate_update_check_flow, args=(True, force), daemon=True
     )
     update_check_thread.start()
 
@@ -493,4 +521,7 @@ def run_updater():
 
 
 if __name__ == "__main__":
+    # Example of how to run with force=True:
+    # run_updater(force=True)
+    # By default, runs with force=False:
     run_updater()

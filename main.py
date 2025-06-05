@@ -65,6 +65,8 @@ if __name__ == "__main__":
 
     widgetsvisible = DESKTOP_WIDGETS
     widgets.set_visible(widgetsvisible)
+
+    # Set corners visibility based on config
     corners_visible = config.get("corners_visible", True)
     corners.set_visible(corners_visible)
 

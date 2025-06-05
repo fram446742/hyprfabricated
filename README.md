@@ -96,6 +96,7 @@ curl -fsSL https://raw.githubusercontent.com/tr1xem/hyprfabricated/main/install.
   - [pywayland]()
   - [numpy](https://numpy.org/)
   - [watchdog](https://pypi.org/project/watchdog/)
+  - [PyGObject]()
 - Fonts (automated on first run):
   - [Zed Sans](https://github.com/zed-industries/zed-fonts)
   - [Tabler Icons](https://tabler.io/icons)

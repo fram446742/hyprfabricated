@@ -24,6 +24,8 @@ from modules.dock import Dock
 from modules.updater import run_updater
 from utils.conversion import Conversion
 
+tooltip_settings = f"<b>Open {data.APP_NAME_CAP} Settings</b>"
+tooltip_close = "<b>Close</b>"
 
 class AppLauncher(Box):
     def __init__(self, **kwargs):
@@ -86,12 +88,14 @@ class AppLauncher(Box):
             children=[
                 Button(
                     name="config-button",
+                    tooltip_markup=tooltip_settings,
                     child=Label(name="config-label", markup=icons.config),
                     on_clicked=lambda *_: (exec_shell_command_async(f"python {get_relative_path('../config/config.py')}"), self.close_launcher()),
                 ),
                 self.search_entry,
                 Button(
                     name="close-button",
+                    tooltip_markup=tooltip_close,
                     child=Label(name="close-label", markup=icons.cancel),
                     tooltip_text="Exit",
                     on_clicked=lambda *_: self.close_launcher()
@@ -293,7 +297,7 @@ class AppLauncher(Box):
             case ":p":
                 self.notch.open_notch("power")
             case ":update":
-                GLib.idle_add(run_updater)
+                GLib.idle_add(lambda: run_updater(force=True))
             case _:
                 children = self.viewport.get_children()
                 if children:
