@@ -7,46 +7,53 @@ set -o pipefail  # Prevent errors in a pipeline from being masked
 REPO_URL="https://github.com/tr1xem/hyprfabricated.git"
 INSTALL_DIR="$HOME/.config/hyprfabricated"
 PACKAGES=(
-  brightnessctl
-  cava
-  cliphist
-  fabric-cli-git
-  gnome-bluetooth-3.0
-  gobject-introspection
-  gpu-screen-recorder
-  hypridle
-  hyprlock
-  hyprpicker
-  hyprshot
-  hyprsunset
-  imagemagick
-  libnotify
-  matugen-bin
-  noto-fonts-emoji
-  nvtop
-  playerctl
-  python-fabric-git
-  python-gobject
-  python-ijson
-  python-numpy
-  python-pillow
-  python-psutil
-  python-pywayland
-  python-requests
-  python-setproctitle
-  python-toml
-  python-watchdog
-  swappy
-  swww-git
-  tesseract
-  tmux
-  ttf-nerd-fonts-symbols-mono
-  unzip
-  upower
-  uwsm
-  vte3
-  webp-pixbuf-loader
-  wl-clipboard
+    brightnessctl
+    cava
+    cliphist
+    fabric-cli-git
+    gnome-bluetooth-3.0
+    gobject-introspection
+    gpu-screen-recorder
+    hypridle
+    hyprlock
+    hyprpicker
+    hyprshot
+    hyprsunset
+    imagemagick
+    libnotify
+    matugen-bin
+    noto-fonts-emoji
+    nvtop
+    playerctl
+    python-fabric-git
+    python-gobject
+    python-ijson
+    python-numpy
+    python-pillow
+    python-psutil
+    python-pywayland
+    python-requests
+    python-setproctitle
+    python-toml
+    python-watchdog
+    swappy
+    swww-git
+    tesseract
+    tmux
+    ttf-nerd-fonts-symbols-mono
+    unzip
+    upower
+    uwsm
+    vte3
+    webp-pixbuf-loader
+    wl-clipboard
+    wlinhibit
+    cantarell-fonts
+    ttf-jost
+    vte3
+    otf-nothing-font-git
+
+
 )
 
 # Prevent running as root
