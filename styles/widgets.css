@@ -21,20 +21,21 @@ Changes are applied instantly and globally, for the whole application.
   color: alpha(var(--foreground), 0.6);
 }
 #clock > label {
-  font-size: 100px;
+  font-size: 80px;
   transition: color 0.5s ease;
   color: alpha(var(--primary), 0.7);
-  font-family: "Jost*", sans-serif;
-  font-weight: 900;
-  margin-bottom: -25px;
+  font-family: "Ndot 57 CAPS", sans-serif;
+  /* font-weight: 100; */
+  margin-bottom: 0px;
 }
 #date > label {
-  font-size: 24px;
+  font-size: 34px;
   transition: color 0.5s ease;
   color: alpha(var(--primary), 0.7);
-  font-family: "Jost*", sans-serif;
-  font-weight: 500;
-  margin-bottom: -25px;
+  font-family: "NDOT 57", sans-serif;
+  margin-bottom: 10px;
+  /* font-weight: 10; */
+
 }
 
 #quote {

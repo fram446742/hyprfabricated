@@ -1,5 +1,5 @@
 from fabric.hyprland.widgets import ActiveWindow
-from fabric.utils.helpers import FormattedString, get_desktop_applications, truncate
+from fabric.utils.helpers import FormattedString, get_desktop_applications
 from fabric.widgets.box import Box
 from fabric.widgets.centerbox import CenterBox
 from fabric.widgets.image import Image
@@ -133,13 +133,6 @@ class Notch(Window):
             all_visible=True,
         )
 
-        # 1. Add event mask for button press to the window
-        self.add_events(Gdk.EventMask.BUTTON_PRESS_MASK)
-        # 2. Connect to the window's button-press-event
-        self.connect("button-press-event", self._on_window_button_press)
-        # 3. Connect to focus-out-event
-        self.connect("focus-out-event", self._on_focus_out)
-
         self._typed_chars_buffer = ""
         self._launcher_transitioning = False
         self._launcher_transition_timeout = None
@@ -195,10 +188,6 @@ class Notch(Window):
             h_align="fill",
             center_children=[self.window_icon, self.active_window],
         )
-        # For the active window box, we want to ensure that the label is ellipsized
-        self.add_events(Gdk.EventMask.BUTTON_PRESS_MASK)
-        self.connect("button-press-event", self._on_window_button_press)
-        self.connect("focus-out-event", self._on_focus_out)
 
         self.active_window_box.connect(
             "button-press-event",
@@ -438,8 +427,11 @@ class Notch(Window):
         if data.PANEL_THEME != "Notch":
             for corner in [self.corner_left, self.corner_right]:
                 corner.set_visible(False)
+        
 
         self._current_window_class = self._get_current_window_class()
+        
+
 
         if data.PANEL_THEME == "Notch" and data.BAR_POSITION != "Top":
             GLib.timeout_add(250, self._check_occlusion)
@@ -447,55 +439,9 @@ class Notch(Window):
             self.notch_revealer.set_reveal_child(True)
         else:
             self.notch_revealer.set_reveal_child(False)
+        
 
-        # Add key press event handling to the entire notch window
         self.connect("key-press-event", self.on_key_press)
-
-    def _on_window_button_press(self, widget, event):
-        """
-        Handler for button press events on the Notch window.
-        Used to detect clicks outside the window when a grab is active.
-        """
-        if event.button != Gdk.BUTTON_PRIMARY:
-            return False
-
-        gdk_window = self.get_window()
-        if not gdk_window:
-            return False
-
-        raw_origin = gdk_window.get_origin()
-        window_x = raw_origin[0]
-        window_y = raw_origin[1]
-
-        window_width = gdk_window.get_width()
-        window_height = gdk_window.get_height()
-
-        click_x_global = event.x_root
-        click_y_global = event.y_root
-
-        is_inside_x = (click_x_global >= window_x) and (
-            click_x_global <= window_x + window_width
-        )
-        is_inside_y = (click_y_global >= window_y) and (
-            click_y_global <= window_y + window_height
-        )
-
-        if not (is_inside_x and is_inside_y):
-            self.close_notch()
-            return True  # Event handled, stop propagation
-
-        # If click was inside, let it propagate so internal widgets can handle it (e.g., dashboard buttons)
-        return False
-
-    def _on_focus_out(self, widget, event):
-        """
-        Handler for when the Notch window loses focus.
-        If it's open and loses focus, close it.
-        """
-        if self._is_notch_open:
-            self.close_notch()
-            return True
-        return False
 
     def on_button_enter(self, widget, event):
         self.is_hovered = True
@@ -533,34 +479,24 @@ class Notch(Window):
         return False
 
     def close_notch(self):
-        if not self.dashboard.wallpapers.scheme_dropdown.get_property("popup-shown"):
-            self.set_keyboard_mode("none")
-            self.notch_box.remove_style_class("open")
-            self.stack.remove_style_class("open")
+        self.set_keyboard_mode("none")
+        self.notch_box.remove_style_class("open")
+        self.stack.remove_style_class("open")
 
-            self.bar.revealer_right.set_reveal_child(True)
-            self.bar.revealer_left.set_reveal_child(True)
-            self.applet_stack.set_visible_child(self.nhistory)
-            self._is_notch_open = False
-            self.stack.set_visible_child(self.compact)
-            if data.PANEL_THEME != "Notch":
-                self.notch_revealer.set_reveal_child(False)
+        self.bar.revealer_right.set_reveal_child(True)
+        self.bar.revealer_left.set_reveal_child(True)
+        self.applet_stack.set_visible_child(self.nhistory)
+        self._is_notch_open = False
+        self.stack.set_visible_child(self.compact)
+        if data.PANEL_THEME != "Notch":
+            self.notch_revealer.set_reveal_child(False)
 
-            # seat = Gdk.Display.get_default().get_default_seat()
-            # seat.ungrab()
-
-    def open_notch(self, widget_name: str, *args, **kwargs):
+    def open_notch(self, widget_name: str):
         self.notch_revealer.set_reveal_child(True)
         self.notch_box.add_style_class("open")
         self.stack.add_style_class("open")
         current_stack_child = self.stack.get_visible_child()
-        is_dashboard_currently_visible = current_stack_child == self.dashboard
-
-        # seat = Gdk.Display.get_default().get_default_seat()
-        if self.get_window() is None:
-            self.realize()
-
-        # seat.grab(self.get_window(), Gdk.SeatCapabilities.POINTER, True, None, None, Gdk.Event)
+        is_dashboard_currently_visible = (current_stack_child == self.dashboard)
 
         if widget_name == "network_applet":
             if is_dashboard_currently_visible:
@@ -905,6 +841,7 @@ class Notch(Window):
         if new_window_class != self._current_window_class:
 
             self._current_window_class = new_window_class
+            
 
             if self._occlusion_timer_id is not None:
                 GLib.source_remove(self._occlusion_timer_id)

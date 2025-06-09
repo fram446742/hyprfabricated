@@ -431,7 +431,7 @@ class ActivationSubText(Label):
         self.set_label("Go to Settings to activate Linux")
 
 
-def create_widgets(config, widget_type):
+def create_widgets(config):
     widgets = []
     if config.get("widgets_displaytype_visible", True):
         if config.get("widgets_clock_visible", True):
@@ -439,14 +439,14 @@ def create_widgets(config, widget_type):
                 DateTime(formatters=["%A, %d %B"], interval=10000, name="date")
             )
         if config.get("widgets_date_visible", True):
-            widgets.append(DateTime(formatters=["%I:%M"], name="clock"))
+            widgets.append(DateTime(formatters=["%I:%M %p"], name="clock"))
         if config.get("widgets_quote_visible", True):
             widgets.append(QuoteWidget())
         if config.get("widgets_weatherwid_visible", True):
             widgets.append(WeatherWidget())
     else:
+        widgets.append(DateTime(formatters=["%I:%M %p"], name="clock"))
         widgets.append(DateTime(formatters=["%A. %d %B"], interval=10000, name="date"))
-        widgets.append(DateTime(formatters=["%I:%M"], name="clock"))
     return widgets
 
 
@@ -466,7 +466,7 @@ if data.DESKTOP_WIDGETS:
                         v_expand=True,
                         v_align="center",
                         h_align="center",
-                        children=create_widgets(config, "full"),
+                        children=create_widgets(config),
                     ),
                     all_visible=False,
                     **kwargs,
@@ -517,10 +517,15 @@ if data.DESKTOP_WIDGETS:
                 desktop_widget = Window(
                     layer="bottom",
                     anchor="bottom left",
+                    v_align="start",
+                    h_align="start",
+                    h_expand=True,
+                    v_expand=True,
+                    justification="left",
                     exclusivity="none",
                     child=Box(
                         orientation="v",
-                        children=create_widgets(config, "basic"),
+                        children=create_widgets(config),
                     ),
                     all_visible=True,
                 )
