@@ -7,7 +7,7 @@ import sys
 import threading
 import time
 from pathlib import Path
-
+from loguru import logger
 import gi
 
 # Insertion for embedded VTE terminal
@@ -42,7 +42,7 @@ def get_snooze_file_path():
     try:
         os.makedirs(cache_dir_base, exist_ok=True)
     except Exception as e:
-        print(f"Error creating cache directory {cache_dir_base}: {e}")
+        logger.error(f"Error creating cache directory {cache_dir_base}: {e}")
     return os.path.join(cache_dir_base, SNOOZE_FILE_NAME)
 
 
@@ -65,11 +65,11 @@ def fetch_remote_version():
             timeout=15,
         )
     except subprocess.TimeoutExpired:
-        print("Error: curl timed out while fetching the remote version.")
+        logger.error("curl timed out while fetching the remote version.")
     except FileNotFoundError:
-        print("Error: curl not found. Please install curl.")
+        logger.error("curl not found. Please install curl.")
     except Exception as e:
-        print(f"Error fetching remote version: {e}")
+        logger.error(f"Error fetching remote version: {e}")
 
 
 def get_local_version():
@@ -84,10 +84,10 @@ def get_local_version():
                     "changelog", []
                 )
         except json.JSONDecodeError:
-            print(f"Error: Invalid JSON in local file: {VERSION_FILE}")
+            logger.error(f"Invalid JSON in local file: {VERSION_FILE}")
             return "0.0.0", []
         except Exception as e:
-            print(f"Error reading local version file {VERSION_FILE}: {e}")
+            logger.error(f"Error reading local version file {VERSION_FILE}: {e}")
             return "0.0.0", []
     return "0.0.0", []
 
@@ -106,10 +106,12 @@ def get_remote_version():
                     data_content.get("download_url", "#"),
                 )
         except json.JSONDecodeError:
-            print(f"Error: Invalid JSON in remote file: {REMOTE_VERSION_FILE}")
+            logger.error(f"Invalid JSON in remote file: {REMOTE_VERSION_FILE}")
             return "0.0.0", [], "#"
         except Exception as e:
-            print(f"Error reading remote version file {REMOTE_VERSION_FILE}: {e}")
+            logger.error(
+                f"Error reading remote version file {REMOTE_VERSION_FILE}: {e}"
+            )
             return "0.0.0", [], "#"
     return "0.0.0", [], "#"
 
@@ -122,7 +124,7 @@ def update_local_version_file():
         try:
             shutil.move(REMOTE_VERSION_FILE, VERSION_FILE)
         except Exception as e:
-            print(f"Error updating local version file: {e}")
+            logger.error(f"Error updating local version file: {e}")
             raise
 
 
@@ -236,9 +238,9 @@ class UpdateWindow(Gtk.Window):
         try:
             with open(snooze_file_path, "w") as f:
                 f.write(str(time.time()))
-            print(f"Update snoozed. Snooze file at: {snooze_file_path}")
+            logger.info(f"Update snoozed. Snooze file at: {snooze_file_path}")
         except Exception as e:
-            print(f"Error creating snooze file {snooze_file_path}: {e}")
+            logger.error(f"Error creating snooze file {snooze_file_path}: {e}")
         self.destroy()
 
     def on_update_clicked(self, _widget):
@@ -406,7 +408,7 @@ def _initiate_update_check_flow(
     global _QUIT_GTK_IF_NO_WINDOW_STANDALONE
 
     if not is_connected():
-        print("No internet connection. Skipping update check.")
+        logger.info("No internet connection. Skipping update check.")
         if is_standalone_mode and _QUIT_GTK_IF_NO_WINDOW_STANDALONE:
             GLib.idle_add(Gtk.main_quit)
         return
@@ -415,11 +417,11 @@ def _initiate_update_check_flow(
     latest_version, changelog, _ = get_remote_version()
 
     if force:
-        print(
+        logger.info(
             f"Force update mode enabled. Opening updater for version {latest_version}."
         )
         if latest_version == "0.0.0" and not changelog:
-            print(
+            logger.warning(
                 f"Warning: Could not fetch remote version details for {data.APP_NAME_CAP}. Updater will show default/empty info."
             )
         GLib.idle_add(
@@ -441,29 +443,35 @@ def _initiate_update_check_flow(
                 snooze_until_time_str = time.strftime(
                     "%Y-%m-%d %H:%M:%S", time.localtime(snooze_until_time)
                 )
-                print(f"Check postponed. It will resume after {snooze_until_time_str}.")
+                logger.info(
+                    f"Check postponed. It will resume after {snooze_until_time_str}."
+                )
                 if is_standalone_mode and _QUIT_GTK_IF_NO_WINDOW_STANDALONE:
                     GLib.idle_add(Gtk.main_quit)
                 return
             else:
-                print("Snooze period expired. Removing file and checking for updates.")
+                logger.info(
+                    "Snooze period expired. Removing file and checking for updates."
+                )
                 os.remove(snooze_file_path)
         except ValueError:
-            print(
-                f"Error: invalid content in snooze file. Removing: {snooze_file_path}"
+            logger.error(
+                f"Invalid content in snooze file. Removing: {snooze_file_path}"
             )
             try:
                 os.remove(snooze_file_path)
             except OSError as e_remove:
-                print(f"Error removing corrupt snooze file: {e_remove}")
+                logger.error(f"Error removing corrupt snooze file: {e_remove}")
         except Exception as e_snooze:
-            print(
+            logger.error(
                 f"Error processing snooze file {snooze_file_path}: {e_snooze}. Proceeding with check."
             )
             try:
                 os.remove(snooze_file_path)  # Attempt to remove problematic snooze file
             except OSError as e_remove_generic:
-                print(f"Error removing problematic snooze file: {e_remove_generic}")
+                logger.error(
+                    f"Error removing problematic snooze file: {e_remove_generic}"
+                )
 
     current_version, _ = get_local_version()
 
@@ -473,7 +481,9 @@ def _initiate_update_check_flow(
             launch_update_window, latest_version, changelog, is_standalone_mode
         )
     else:
-        print(f"{data.APP_NAME_CAP} is up to date or the remote version is invalid.")
+        logger.info(
+            f"{data.APP_NAME_CAP} is up to date or the remote version is invalid."
+        )
         if is_standalone_mode and _QUIT_GTK_IF_NO_WINDOW_STANDALONE:
             GLib.idle_add(Gtk.main_quit)
 

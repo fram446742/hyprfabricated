@@ -180,7 +180,7 @@ class Bar(Window):
 
         self.date_time = DateTime(
             name="date-time",
-            formatters=["%H:%M"] if not data.VERTICAL else ["%H\n%M"],
+            formatters=["%I:%M %P"] if not data.VERTICAL else ["%I\n%M"],
             h_align="center" if not data.VERTICAL else "fill",
             v_align="center",
             h_expand=True,

@@ -18,7 +18,9 @@ class BluetoothDeviceSlot(CenterBox):
             "notify::closed", lambda *_: self.device.closed and self.destroy()
         )
 
-        self.connection_label = Label(name="bluetooth-connection", markup=icons.bluetooth_disconnected)
+        self.connection_label = Label(
+            name="bluetooth-connection", markup=icons.bluetooth_disconnected
+        )
         self.connect_button = Button(
             name="bluetooth-connect",
             label="Connect",
@@ -33,7 +35,12 @@ class BluetoothDeviceSlot(CenterBox):
                 h_align="fill",
                 children=[
                     Image(icon_name=device.icon_name + "-symbolic", size=16),
-                    Label(label=device.name, h_expand=True, h_align="start", ellipsization="end"),
+                    Label(
+                        label=device.name,
+                        h_expand=True,
+                        h_align="start",
+                        ellipsization="end",
+                    ),
                     self.connection_label,
                 ],
             )
@@ -44,7 +51,9 @@ class BluetoothDeviceSlot(CenterBox):
 
     def on_changed(self, *_):
         self.connection_label.set_markup(
-            icons.bluetooth_connected if self.device.connected else icons.bluetooth_disconnected
+            icons.bluetooth_connected
+            if self.device.connected
+            else icons.bluetooth_disconnected
         )
         if self.device.connecting:
             self.connect_button.set_label(
@@ -59,6 +68,7 @@ class BluetoothDeviceSlot(CenterBox):
         else:
             self.connect_button.remove_style_class("connected")
         return
+
 
 class BluetoothConnections(Box):
     def __init__(self, **kwargs):
@@ -85,19 +95,16 @@ class BluetoothConnections(Box):
             name="bluetooth-scan",
             child=self.scan_label,
             tooltip_text="Scan for Bluetooth devices",
-            on_clicked=lambda *_: self.client.toggle_scan()
+            on_clicked=lambda *_: self.client.toggle_scan(),
         )
         self.back_button = Button(
             name="bluetooth-back",
             child=Label(name="bluetooth-back-label", markup=icons.chevron_left),
-            on_clicked=lambda *_: self.widgets.show_notif()
+            on_clicked=lambda *_: self.widgets.show_notif(),
         )
 
         self.client.connect("notify::enabled", lambda *_: self.status_label())
-        self.client.connect(
-            "notify::scanning",
-            lambda *_: self.update_scan_label()
-        )
+        self.client.connect("notify::scanning", lambda *_: self.update_scan_label())
 
         self.paired_box = Box(spacing=2, orientation="vertical")
         self.available_box = Box(spacing=2, orientation="vertical")
@@ -112,7 +119,7 @@ class BluetoothConnections(Box):
                 name="bluetooth-header",
                 start_children=self.back_button,
                 center_children=Label(name="bluetooth-text", label="Bluetooth Devices"),
-                end_children=self.scan_button
+                end_children=self.scan_button,
             ),
             ScrolledWindow(
                 name="bluetooth-devices",
@@ -128,15 +135,28 @@ class BluetoothConnections(Box):
         self.client.notify("enabled")
 
     def status_label(self):
-        print(self.client.enabled)
         if self.client.enabled:
             self.bt_status_text.set_label("Enabled")
-            for i in [self.bt_status_button, self.bt_status_text, self.bt_icon, self.bt_label, self.bt_menu_button, self.bt_menu_label]:
+            for i in [
+                self.bt_status_button,
+                self.bt_status_text,
+                self.bt_icon,
+                self.bt_label,
+                self.bt_menu_button,
+                self.bt_menu_label,
+            ]:
                 i.remove_style_class("disabled")
             self.bt_icon.set_markup(icons.bluetooth)
         else:
             self.bt_status_text.set_label("Disabled")
-            for i in [self.bt_status_button, self.bt_status_text, self.bt_icon, self.bt_label, self.bt_menu_button, self.bt_menu_label]:
+            for i in [
+                self.bt_status_button,
+                self.bt_status_text,
+                self.bt_icon,
+                self.bt_label,
+                self.bt_menu_button,
+                self.bt_menu_label,
+            ]:
                 i.add_style_class("disabled")
             self.bt_icon.set_markup(icons.bluetooth_off)
 
