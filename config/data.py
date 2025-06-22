@@ -40,30 +40,32 @@ BAR_THEME = "Pills"
 DOCK_THEME = "Pills"
 
 PANEL_THEME = "Notch"
+DATETIME_12H_FORMAT = False # Default value if config file doesn't exist
 
 
 def load_config():
     """Load the configuration from config.json"""
     config_path = os.path.expanduser(f"~/.config/{APP_NAME_CAP}/config/config.json")
     config = {}
-
+    
     if os.path.exists(config_path):
         try:
-            with open(config_path, "r") as f:
+            with open(config_path, 'r') as f:
                 config = json.load(f)
         except Exception as e:
             print(f"Error loading config: {e}")
-
+    
     return config
 
 
 if os.path.exists(CONFIG_FILE):
-    with open(CONFIG_FILE, "r") as f:
+    with open(CONFIG_FILE, 'r') as f:
         config = json.load(f)
-    WALLPAPERS_DIR = config.get("wallpapers_dir", WALLPAPERS_DIR_DEFAULT)
-    BAR_POSITION = config.get("bar_position", "Top")
+    WALLPAPERS_DIR = config.get('wallpapers_dir', WALLPAPERS_DIR_DEFAULT)
+    BAR_POSITION = config.get('bar_position', "Top")
     VERTICAL = BAR_POSITION in ["Left", "Right"]
     CENTERED_BAR = config.get("centered_bar", False)
+    DATETIME_12H_FORMAT = config.get('datetime_12h_format', False)
     TERMINAL_COMMAND = config.get("terminal_command", "kitty -e")
     DOCK_ENABLED = config.get("dock_enabled", True)
     DOCK_ALWAYS_OCCLUDED = config.get("dock_always_occluded", False)
@@ -127,6 +129,7 @@ else:
     BAR_POSITION = "Top"
     VERTICAL = False
     CENTERED_BAR = False
+    DATETIME_12H_FORMAT = False
     DOCK_ENABLED = True
     DOCK_ALWAYS_OCCLUDED = False
     TERMINAL_COMMAND = "kitty -e"

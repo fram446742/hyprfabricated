@@ -29,12 +29,15 @@ class Widgets(Box):
         )
 
         vertical_layout = False
-
         if data.PANEL_THEME == "Panel" and (
             data.BAR_POSITION in ["Left", "Right"]
             or data.PANEL_POSITION in ["Start", "End"]
         ):
             vertical_layout = True
+
+        calendar_view_mode = "week" if vertical_layout else "month"
+
+        self.calendar = Calendar(view_mode=calendar_view_mode)
 
         self.notch = kwargs["notch"]
 
@@ -59,8 +62,6 @@ class Widgets(Box):
         )
 
         self.controls = ControlSliders()
-
-        self.calendar = Calendar()
 
         self.player = Player()
 
@@ -91,26 +92,26 @@ class Widgets(Box):
             ],
         )
 
-        self.children_1 = (
-            [
+        if not vertical_layout:
+            self.children_1 = [
                 Box(
                     name="container-sub-1",
                     h_expand=True,
                     v_expand=True,
                     spacing=8,
                     children=[
-                        Calendar(),
+                        self.calendar,
                         self.applet_stack_box,
                     ],
                 ),
                 self.metrics,
             ]
-            if not vertical_layout
-            else [
+        else:
+            self.children_1 = [
                 self.applet_stack_box,
+                self.calendar,  # Weekly view when vertical
                 self.player,
             ]
-        )
 
         self.container_1 = Box(
             name="container-1",
@@ -134,16 +135,15 @@ class Widgets(Box):
             ],
         )
 
-        self.children_3 = (
-            [
+        if not vertical_layout:
+            self.children_3 = [
                 self.player,
                 self.container_2,
             ]
-            if not vertical_layout
-            else [
+        else:  # vertical_layout
+            self.children_3 = [
                 self.container_2,
             ]
-        )
 
         self.container_3 = Box(
             name="container-3",

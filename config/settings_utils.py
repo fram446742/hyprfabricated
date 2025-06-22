@@ -52,9 +52,9 @@ def ensure_matugen_config():
                 "arguments": [
                     "img",
                     "-t",
-                    "outer",
+                    "fade",
                     "--transition-duration",
-                    "1.5",
+                    "0.5",
                     "--transition-step",
                     "255",
                     "--transition-fps",

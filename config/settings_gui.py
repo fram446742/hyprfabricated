@@ -250,6 +250,27 @@ class HyprConfGUI(Window):
         )
         vbox.add(separator1)
 
+        # START NEW SECTION FOR DATETIME FORMAT
+        datetime_format_header = Label(markup="<b>Date & Time Format</b>", h_align="start")
+        vbox.add(datetime_format_header)
+
+        datetime_grid = Gtk.Grid()
+        datetime_grid.set_column_spacing(20)
+        datetime_grid.set_row_spacing(10)
+        datetime_grid.set_margin_start(10)
+        datetime_grid.set_margin_top(5)
+        datetime_grid.set_margin_bottom(10) # Adds space before the next section
+        vbox.add(datetime_grid)
+
+        datetime_12h_label = Label(label="Use 12-Hour Clock", h_align="start", v_align="center")
+        datetime_grid.attach(datetime_12h_label, 0, 0, 1, 1)
+
+        datetime_12h_switch_container = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, halign=Gtk.Align.START, valign=Gtk.Align.CENTER)
+        self.datetime_12h_switch = Gtk.Switch(active=bind_vars.get('datetime_12h_format', False))
+        datetime_12h_switch_container.add(self.datetime_12h_switch)
+        datetime_grid.attach(datetime_12h_switch_container, 1, 0, 1, 1)
+        # END NEW SECTION FOR DATETIME FORMAT
+
         layout_header = Label(markup="<b>Layout Options</b>", h_align="start")
         vbox.add(layout_header)
         layout_grid = Gtk.Grid()
@@ -1074,41 +1095,24 @@ class HyprConfGUI(Window):
             current_bind_vars_snapshot[prefix_key] = prefix_entry.get_text()
             current_bind_vars_snapshot[suffix_key] = suffix_entry.get_text()
 
-        current_bind_vars_snapshot["wallpapers_dir"] = (
-            self.wall_dir_chooser.get_filename()
-        )
-
-        current_bind_vars_snapshot["bar_position"] = (
-            self.position_combo.get_active_text()
-        )
-        current_bind_vars_snapshot["vertical"] = current_bind_vars_snapshot[
-            "bar_position"
-        ] in ["Left", "Right"]
-
-        current_bind_vars_snapshot["centered_bar"] = self.centered_switch.get_active()
-        current_bind_vars_snapshot["dock_enabled"] = self.dock_switch.get_active()
-        current_bind_vars_snapshot["dock_always_occluded"] = (
-            self.dock_hover_switch.get_active()
-        )
-        current_bind_vars_snapshot["dock_icon_size"] = int(self.dock_size_scale.value)
-        current_bind_vars_snapshot["terminal_command"] = self.terminal_entry.get_text()
-        current_bind_vars_snapshot["corners_visible"] = self.corners_switch.get_active()
-        current_bind_vars_snapshot["bar_workspace_show_number"] = (
-            self.ws_num_switch.get_active()
-        )
-        current_bind_vars_snapshot["bar_workspace_use_chinese_numerals"] = (
-            self.ws_chinese_switch.get_active()
-        )
-        current_bind_vars_snapshot["bar_theme"] = self.bar_theme_combo.get_active_text()
-        current_bind_vars_snapshot["dock_theme"] = (
-            self.dock_theme_combo.get_active_text()
-        )
-        current_bind_vars_snapshot["panel_theme"] = (
-            self.panel_theme_combo.get_active_text()
-        )
-        current_bind_vars_snapshot[PANEL_POSITION_KEY] = (
-            self.panel_position_combo.get_active_text()
-        )
+        current_bind_vars_snapshot['wallpapers_dir'] = self.wall_dir_chooser.get_filename()
+        
+        current_bind_vars_snapshot['bar_position'] = self.position_combo.get_active_text()
+        current_bind_vars_snapshot['vertical'] = current_bind_vars_snapshot['bar_position'] in ["Left", "Right"]
+        
+        current_bind_vars_snapshot['centered_bar'] = self.centered_switch.get_active()
+        current_bind_vars_snapshot['datetime_12h_format'] = self.datetime_12h_switch.get_active()
+        current_bind_vars_snapshot['dock_enabled'] = self.dock_switch.get_active()
+        current_bind_vars_snapshot['dock_always_occluded'] = self.dock_hover_switch.get_active()
+        current_bind_vars_snapshot['dock_icon_size'] = int(self.dock_size_scale.value)
+        current_bind_vars_snapshot['terminal_command'] = self.terminal_entry.get_text()
+        current_bind_vars_snapshot['corners_visible'] = self.corners_switch.get_active()
+        current_bind_vars_snapshot['bar_workspace_show_number'] = self.ws_num_switch.get_active()
+        current_bind_vars_snapshot['bar_workspace_use_chinese_numerals'] = self.ws_chinese_switch.get_active()
+        current_bind_vars_snapshot['bar_theme'] = self.bar_theme_combo.get_active_text()
+        current_bind_vars_snapshot['dock_theme'] = self.dock_theme_combo.get_active_text()
+        current_bind_vars_snapshot['panel_theme'] = self.panel_theme_combo.get_active_text()
+        current_bind_vars_snapshot[PANEL_POSITION_KEY] = self.panel_position_combo.get_active_text()
         selected_notif_pos_text = self.notification_pos_combo.get_active_text()
         if selected_notif_pos_text:
             current_bind_vars_snapshot[NOTIF_POS_KEY] = selected_notif_pos_text

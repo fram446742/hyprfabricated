@@ -69,6 +69,7 @@ DEFAULTS = {
     "panel_theme": "Notch",  # Default panel theme
     PANEL_POSITION_KEY: PANEL_POSITION_DEFAULT,  # Default panel position
     NOTIF_POS_KEY: NOTIF_POS_DEFAULT,  # Nueva entrada para la posición de notificaciones
+    'datetime_12h_format': False,  # Add this line
     "bar_button_apps_visible": True,
     "bar_systray_visible": True,
     "bar_control_visible": True,
