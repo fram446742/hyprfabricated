@@ -18,9 +18,9 @@ PACKAGES=(
     hyprlock
     hyprpicker-git
     hyprsunset-git
-    hypridle-git
+    hypridle
     hyprpicker-git
-    hyprshot-git
+    hyprshot
     hyprsunset-git
     imagemagick
     libnotify
@@ -42,7 +42,7 @@ PACKAGES=(
     python-numpy
     python-numpy
     swappy
-    swww-git
+    swww
     tesseract
     tmux
     ttf-nerd-fonts-symbols-mono

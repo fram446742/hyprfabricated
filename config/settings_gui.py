@@ -251,7 +251,7 @@ class HyprConfGUI(Window):
         vbox.add(separator1)
 
         # START NEW SECTION FOR DATETIME FORMAT
-        datetime_format_header = Label(markup="<b>Date & Time Format</b>", h_align="start")
+        datetime_format_header = Label(markup="<b>Date &amp; Time Format</b>", h_align="start")
         vbox.add(datetime_format_header)
 
         datetime_grid = Gtk.Grid()
