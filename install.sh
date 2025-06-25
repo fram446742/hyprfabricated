@@ -14,12 +14,11 @@ PACKAGES=(
     gnome-bluetooth-3.0
     gobject-introspection
     gpu-screen-recorder
-    hypridle-git
-    hyprlock-git
+    hypridle
+    hyprlock
     hyprpicker-git
     hyprsunset-git
     hypridle-git
-    hyprlock-git
     hyprpicker-git
     hyprshot-git
     hyprsunset-git

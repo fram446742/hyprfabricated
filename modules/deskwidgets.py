@@ -439,15 +439,15 @@ def create_widgets(config):
                 DateTime(formatters=["%A, %d %B"], interval=10000, name="date")
             )
         if config.get("widgets_date_visible", True):
-            # widgets.append(DateTime(formatters=["%I:%M %p"], name="clock")) # 12 hour clock
-            widgets.append(DateTime(formatters=["%H:%M"], name="clock")) # 24 hour clock
+            widgets.append(DateTime(formatters=["%I:%M %p"], name="clock")) # 12 hour clock
+            # widgets.append(DateTime(formatters=["%H:%M"], name="clock")) # 24 hour clock
         if config.get("widgets_quote_visible", True):
             widgets.append(QuoteWidget())
         if config.get("widgets_weatherwid_visible", True):
             widgets.append(WeatherWidget())
     else:
-        # widgets.append(DateTime(formatters=["%I:%M %p"], name="clock")) # 12 hour clock
-        widgets.append(DateTime(formatters=["%H:%M"], name="clock")) # 24 hour clock
+        widgets.append(DateTime(formatters=["%I:%M %p"], name="clock")) # 12 hour clock
+        # widgets.append(DateTime(formatters=["%H:%M"], name="clock")) # 24 hour clock
         widgets.append(DateTime(formatters=["%A. %d %B"], interval=10000, name="date"))
     return widgets
 
