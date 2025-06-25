@@ -47,9 +47,10 @@ class Systemprofiles(Box):
             )
         )
 
-        self.get_current_power_mode()
-        self.hide_timer = None
-        self.hover_counter = 0
+        if data.BAR_COMPONENTS_VISIBILITY.get("sysprofiles", False):
+            self.get_current_power_mode()
+            self.hide_timer = None
+            self.hover_counter = 0
         # self.set_power_mode("balanced")
 
     def get_current_power_mode(self):

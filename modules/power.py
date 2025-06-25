@@ -1,15 +1,30 @@
-from fabric.widgets.box import Box
-from fabric.widgets.label import Label
-from fabric.widgets.button import Button
 from fabric.utils.helpers import exec_shell_command_async
+from fabric.widgets.box import Box
+from fabric.widgets.button import Button
+from fabric.widgets.label import Label
+
+import config.data as data
 import modules.icons as icons
+
+tooltip_lock = "Lock"
+tooltip_suspend = "Suspend"
+tooltip_logout = "Logout"
+tooltip_reboot = "Reboot"
+tooltip_shutdown = "Shutdown"
 
 
 class PowerMenu(Box):
     def __init__(self, **kwargs):
+        orientation = "h"
+        if data.PANEL_THEME == "Panel" and (
+            data.BAR_POSITION in ["Left", "Right"]
+            or data.PANEL_POSITION in ["Start", "End"]
+        ):
+            orientation = "v"
+
         super().__init__(
             name="power-menu",
-            orientation="h",
+            orientation=orientation,
             spacing=4,
             v_align="center",
             h_align="center",
@@ -21,6 +36,7 @@ class PowerMenu(Box):
 
         self.btn_lock = Button(
             name="power-menu-button",
+            tooltip_markup=tooltip_lock,
             child=Label(name="button-label", markup=icons.lock),
             on_clicked=self.lock,
             h_expand=False,
@@ -31,6 +47,7 @@ class PowerMenu(Box):
 
         self.btn_suspend = Button(
             name="power-menu-button",
+            tooltip_markup=tooltip_suspend,
             child=Label(name="button-label", markup=icons.suspend),
             on_clicked=self.suspend,
             h_expand=False,
@@ -41,6 +58,7 @@ class PowerMenu(Box):
 
         self.btn_logout = Button(
             name="power-menu-button",
+            tooltip_markup=tooltip_logout,
             child=Label(name="button-label", markup=icons.logout),
             on_clicked=self.logout,
             h_expand=False,
@@ -51,6 +69,7 @@ class PowerMenu(Box):
 
         self.btn_reboot = Button(
             name="power-menu-button",
+            tooltip_markup=tooltip_reboot,
             child=Label(name="button-label", markup=icons.reboot),
             on_clicked=self.reboot,
             h_expand=False,
@@ -61,6 +80,7 @@ class PowerMenu(Box):
 
         self.btn_shutdown = Button(
             name="power-menu-button",
+            tooltip_markup=tooltip_shutdown,
             child=Label(name="button-label", markup=icons.shutdown),
             on_clicked=self.poweroff,
             h_expand=False,
@@ -85,7 +105,6 @@ class PowerMenu(Box):
     def close_menu(self):
         self.notch.close_notch()
 
-    # Métodos de acción
     def lock(self, *args):
         print("Locking screen...")
         exec_shell_command_async("loginctl lock-session")

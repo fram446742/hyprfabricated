@@ -9,11 +9,11 @@ INSTALL_DIR="$HOME/.config/hyprfabricated"
 PACKAGES=(
     brightnessctl
     cava
+    cliphist
     fabric-cli-git
     gnome-bluetooth-3.0
     gobject-introspection
     gpu-screen-recorder
-    grimblast
     hypridle-git
     hyprlock-git
     hyprpicker-git
@@ -21,18 +21,21 @@ PACKAGES=(
     hypridle-git
     hyprlock-git
     hyprpicker-git
+    hyprshot-git
     hyprsunset-git
     imagemagick
     libnotify
-    hyprshot
     matugen-bin
     noto-fonts-emoji
+    nvtop
     playerctl
-    python-numpy
     python-fabric-git
+    python-gobject
     python-ijson
+    python-numpy
     python-pillow
     python-psutil
+    python-pywayland
     python-requests
     python-setproctitle
     python-toml
@@ -41,12 +44,16 @@ PACKAGES=(
     python-numpy
     swappy
     swww-git
-    swww-git
+    tesseract
+    tmux
+    ttf-nerd-fonts-symbols-mono
+    unzip
+    upowertmux
     uwsm
+    vte3
+    webp-pixbuf-loader
     wl-clipboard
     wlinhibit
-    tesseract
-    plasma-browser-integration
     cantarell-fonts
     ttf-jost
     unzip
@@ -54,17 +61,8 @@ PACKAGES=(
     cliphist
     webp-pixbuf-loader
     nvtop
-)
-
-PYTHON_PACKAGES=(
-    ijson 
-    pillow 
-    psutil
-    requests 
-    setproctitle 
-    toml 
-    watchdog
-    numpy
+    vte3
+    otf-nothing-font-git
 )
 
 PYTHON_PACKAGES=(
@@ -117,12 +115,6 @@ $aur_helper -Syy --needed --devel --noconfirm "${PACKAGES[@]}" || true
 echo "Installing gray-git..."
 yes | $aur_helper -Syy --needed --devel --noconfirm gray-git || true
 
-# Downgrade python-gobject to 3.50.0-2 (Temporary fix)
-if [ "$(pacman -Q python-gobject | awk '{print $2}')" != "3.50.0-2" ]; then
-    echo "Downgrading python-gobject to 3.50.0-2..."
-    sudo pacman -U --noconfirm https://archive.archlinux.org/packages/p/python-gobject/python-gobject-3.50.0-2-x86_64.pkg.tar.zst
-fi
-
 echo "Installing required fonts..."
 
 FONT_URL="https://github.com/zed-industries/zed-fonts/releases/download/1.2.0/zed-sans-1.2.0.zip"
@@ -148,7 +140,7 @@ fi
 if [ ! -d "$HOME/.fonts/tabler-icons" ]; then
     echo "Copying local fonts to $HOME/.fonts/tabler-icons..."
     mkdir -p "$HOME/.fonts/tabler-icons"
-    cp -r "$INSTALL_DIR/assets/fonts/"* "$HOME/.fonts/tabler-icons"
+    cp -r "$INSTALL_DIR/assets/fonts/"* "$HOME/.fonts"
 else
     echo "Local fonts are already installed. Skipping copy."
 fi

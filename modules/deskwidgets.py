@@ -4,7 +4,7 @@ from fabric.widgets.label import Label
 from fabric.widgets.overlay import Overlay
 from fabric.widgets.datetime import DateTime
 from fabric.widgets.circularprogressbar import CircularProgressBar
-from fabric.widgets.wayland import WaylandWindow as Window
+from widgets.wayland import WaylandWindow as Window
 from fabric.utils import invoke_repeater
 import requests
 import urllib.parse
@@ -230,7 +230,7 @@ class Sysinfo(Box):
         return True
 
 
-class weather(Box):
+class WeatherWidget(Box):
     def __init__(self, **kwargs):
         super().__init__(
             layer="bottom",
@@ -252,9 +252,9 @@ class weather(Box):
                 Box(
                     orientation="v",
                     children=[
-                        Label(label="", h_align="start", name="headertxt1"),
-                        Label(label="", h_align="start", name="headertxt3"),
-                        Label(label="", h_align="start", name="headertxt2"),
+                        Label(label="", h_align="start", name="weather-location"),
+                        Label(label="", h_align="start", name="weather-update-time"),
+                        Label(label="", h_align="start", name="weather-condition"),
                     ],
                 ),
             ],
@@ -267,8 +267,8 @@ class weather(Box):
                 Box(
                     orientation="v",
                     children=[
-                        Label(label="", name="temptxt"),
-                        Label(label="", name="temptxtbt"),
+                        Label(label="", name="weather-current-temperature"),
+                        Label(label="", name="weather-feels-like-temperature"),
                     ],
                 ),
             ],
@@ -280,7 +280,7 @@ class weather(Box):
                 Box(
                     orientation="v",
                     children=[
-                        Label(label="", name="headertxt"),
+                        Label(label="", name="weather-emoji"),
                     ],
                 ),
             ],
@@ -368,7 +368,7 @@ def fetch_quote_async(callback):
     GLib.idle_add(lambda: fetch_quote(callback))
 
 
-class qoute(Label):
+class QuoteWidget(Label):
     def __init__(self, **kwargs):
         super().__init__(
             name="quote",
@@ -399,10 +399,10 @@ class qoute(Label):
         self.set_visible(True)
 
 
-class activation(Label):
+class ActivationMainText(Label):
     def __init__(self, **kwargs):
         super().__init__(
-            name="activation1",
+            name="activation-main-text",
             label="",
             anchor="bottom right",
             justification="left",
@@ -415,10 +415,10 @@ class activation(Label):
         self.set_label("Activate Linux")
 
 
-class activationbot(Label):
+class ActivationSubText(Label):
     def __init__(self, **kwargs):
         super().__init__(
-            name="activation2",
+            name="activation-sub-text",
             label="",
             anchor="bottom right",
             justification="left",
@@ -431,7 +431,7 @@ class activationbot(Label):
         self.set_label("Go to Settings to activate Linux")
 
 
-def create_widgets(config, widget_type):
+def create_widgets(config):
     widgets = []
     if config.get("widgets_displaytype_visible", True):
         if config.get("widgets_clock_visible", True):
@@ -439,20 +439,16 @@ def create_widgets(config, widget_type):
                 DateTime(formatters=["%A, %d %B"], interval=10000, name="date")
             )
         if config.get("widgets_date_visible", True):
-            # widgets.append(DateTime(formatters=["%I:%M"], name="clock")) # 12 hour clock
+            # widgets.append(DateTime(formatters=["%I:%M %p"], name="clock")) # 12 hour clock
             widgets.append(DateTime(formatters=["%H:%M"], name="clock")) # 24 hour clock
         if config.get("widgets_quote_visible", True):
-            widgets.append(qoute())
+            widgets.append(QuoteWidget())
         if config.get("widgets_weatherwid_visible", True):
-            widgets.append(weather())
+            widgets.append(WeatherWidget())
     else:
-        if config.get("widgets_date_visible", True):
-            widgets.append(
-                DateTime(formatters=["%A. %d %B"], interval=10000, name="date")
-            )
-        if config.get("widgets_clock_visible", True):
-            # widgets.append(DateTime(formatters=["%I:%M"], name="clock")) # 12 hour clock
-            widgets.append(DateTime(formatters=["%H:%M"], name="clock")) # 24 hour clock
+        # widgets.append(DateTime(formatters=["%I:%M %p"], name="clock")) # 12 hour clock
+        widgets.append(DateTime(formatters=["%H:%M"], name="clock")) # 24 hour clock
+        widgets.append(DateTime(formatters=["%A. %d %B"], interval=10000, name="date"))
     return widgets
 
 
@@ -472,7 +468,7 @@ if data.DESKTOP_WIDGETS:
                         v_expand=True,
                         v_align="center",
                         h_align="center",
-                        children=create_widgets(config, "full"),
+                        children=create_widgets(config),
                     ),
                     all_visible=False,
                     **kwargs,
@@ -505,8 +501,8 @@ if data.DESKTOP_WIDGETS:
                         child=Box(
                             orientation="v",
                             children=[
-                                activation(),
-                                activationbot(),
+                                ActivationMainText(),
+                                ActivationSubText(),
                             ],
                         ),
                         all_visible=True,
@@ -523,10 +519,15 @@ if data.DESKTOP_WIDGETS:
                 desktop_widget = Window(
                     layer="bottom",
                     anchor="bottom left",
+                    v_align="start",
+                    h_align="start",
+                    h_expand=True,
+                    v_expand=True,
+                    justification="left",
                     exclusivity="none",
                     child=Box(
                         orientation="v",
-                        children=create_widgets(config, "basic"),
+                        children=create_widgets(config),
                     ),
                     all_visible=True,
                 )
@@ -543,8 +544,8 @@ if data.DESKTOP_WIDGETS:
                         child=Box(
                             orientation="v",
                             children=[
-                                activation(),
-                                activationbot(),
+                                ActivationMainText(),
+                                ActivationSubText(),
                             ],
                         ),
                         all_visible=True,

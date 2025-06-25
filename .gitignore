@@ -10,4 +10,5 @@ config/dock.json.bak
 **/stdout.log
 **/stderr.log
 **/*.pyc
-**/__pycache__/
+**/__pycache__/.aider*
+.aider*

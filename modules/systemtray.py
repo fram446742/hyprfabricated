@@ -5,15 +5,15 @@ from gi.repository import Gray, Gtk, Gdk, GdkPixbuf, GLib
 
 import config.data as data
 
+
 class SystemTray(Gtk.Box):
     def __init__(self, pixel_size: int = 20, **kwargs) -> None:
-        orientation = Gtk.Orientation.HORIZONTAL if not data.VERTICAL else Gtk.Orientation.VERTICAL
-        super().__init__(
-            name="systray",
-            orientation=orientation,
-            spacing=8,
-            **kwargs
+        orientation = (
+            Gtk.Orientation.HORIZONTAL
+            if not data.VERTICAL
+            else Gtk.Orientation.VERTICAL
         )
+        super().__init__(name="systray", orientation=orientation, spacing=8, **kwargs)
         self.set_visible(False)  # Initially hidden when empty.
         self.pixel_size = pixel_size
         self.watcher = Gray.Watcher()
@@ -32,12 +32,12 @@ class SystemTray(Gtk.Box):
     def _update_visibility(self):
         self.set_visible(len(self.get_children()) > 0)
 
-
-
     def on_item_added(self, _, identifier: str):
         item = self.watcher.get_item_for_identifier(identifier)
         item_button = self.do_bake_item_button(item)
-        item.connect("removed", lambda *args: (item_button.destroy(), self._update_visibility()))
+        item.connect(
+            "removed", lambda *args: (item_button.destroy(), self._update_visibility())
+        )
         self.add(item_button)
         item_button.show_all()
         self._update_visibility()
@@ -49,7 +49,6 @@ class SystemTray(Gtk.Box):
             "button-press-event",
             lambda button, event: self.on_button_click(button, item, event),
         )
-
         pixmap = Gray.get_pixmap_for_pixmaps(item.get_icon_pixmaps(), self.pixel_size)
 
         try:
@@ -111,4 +110,3 @@ class SystemTray(Gtk.Box):
                 )
             else:
                 item.context_menu(event.x, event.y)
-

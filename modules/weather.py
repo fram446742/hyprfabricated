@@ -50,7 +50,12 @@ class Weather(Button):
     def set_visible(self, visible):
         """Override to track external visibility setting"""
         # Only update actual visibility if weather data is available
-        if visible and hasattr(self, "has_weather_data") and self.has_weather_data:
+        if (
+            visible
+            and hasattr(self, "has_weather_data")
+            and self.has_weather_data
+            and self.enabled
+        ):
             super().set_visible(self.enabled)
         else:
             super().set_visible(False)
